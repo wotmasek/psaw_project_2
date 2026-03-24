@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MVP baseline tokens */
+:root {
+  --color-primary: #2e7d32;
+  --color-secondary: #e3f2fd;
+  --color-tertiary: #e8f5e9;
+  --color-neutral: #37474f;
+}
+
