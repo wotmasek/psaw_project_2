@@ -1,10 +1,22 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle || "403" %></title></head>
-  <body>
-    <h1>403</h1>
-    <p>Brak dostępu do tego zasobu.</p>
-    <a href="/">Powrót do strony głównej</a>
-  </body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'dlaczegozyc.pl' }) %>
 
+<main class="flex-grow flex flex-col items-center justify-center px-8 pt-16 pb-24 text-center">
+  <div class="w-24 h-24 bg-surface-container flex items-center justify-center rounded-full mb-8">
+    <span class="material-symbols-outlined text-error text-5xl" style="font-variation-settings: 'wght' 300;">lock</span>
+  </div>
+  <h1 class="font-headline font-extrabold text-2xl mb-4 tracking-tight text-on-surface">Brak dostępu</h1>
+  <p class="font-body text-on-surface-variant leading-relaxed text-lg mb-10">
+    Nie masz uprawnień do wyświetlenia tej strony.
+  </p>
+  <a href="/" class="block py-4 px-8 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-300 text-center">
+    Powrót do strony głównej
+  </a>
+</main>
+
+<%- include('../../partials/navigation-public') %>
+</body>
+</html>

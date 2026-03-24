@@ -3,6 +3,9 @@
 ## Cel dokumentu
 Ten dokument definiuje autoryzację, role i ochronę dostępu w MVP `dlaczegozyc.pl`.
 
+Opisuje stan docelowy auth.
+Aktualny stan implementacji skeletonu opisuje `docs/tech/IMPLEMENTATION_STATUS.md`.
+
 ## Założenie MVP
 W MVP stosujemy klasyczne uwierzytelnianie sesyjne:
 - rejestracja przez formularz HTML,
@@ -119,9 +122,9 @@ Pola:
 - jawny `SESSION_SECRET` w zmiennych środowiskowych.
 
 ### Store sesji
-- Lokalnie dopuszczalny jest prosty store developerski.
-- Dla uruchomienia kontenerowego i środowiska współdzielonego zalecany jest store trwały.
-- Jeśli projekt ma działać na wielu restartach bez utraty sesji, store nie powinien być pamięciowy.
+- Preferowany jest store trwały.
+- Jeśli projekt ma działać po restartach i w kontenerach, store nie powinien być pamięciowy.
+- Aktualny skeleton repo używa PostgreSQL session store przez `connect-pg-simple`.
 
 W MVP nie wprowadzamy JWT.
 
@@ -176,6 +179,13 @@ Stosować dla brakującej ścieżki lub rekordu, którego nie ma albo nie powini
 - Ograniczyć liczbę prób logowania na IP lub sesję.
 - Nie logować haseł, tokenów CSRF ani treści sesji.
 - Nie trzymać sekretów w repozytorium.
+
+## Zgodność z aktualnym repo
+- sesja jest już skonfigurowana w `src/config/session.js`,
+- cookie sesyjne jest parametryzowane env,
+- logout działa jako `POST`,
+- auth controller jest jeszcze placeholderem i nie wykonuje prawdziwej autoryzacji do bazy,
+- middleware CSRF jest jeszcze placeholderem.
 
 ## Elementy świadomie poza MVP
 - odzyskiwanie hasła,

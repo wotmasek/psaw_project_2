@@ -1,4 +1,22 @@
-<header>
-  <h1>dlaczegozyc.pl</h1>
+<%
+  const _showBack = locals.showBack !== undefined ? locals.showBack : true;
+  const _headerTitle = locals.headerTitle || 'dlaczegozyc.pl';
+  const _showAuth = locals.showAuth !== undefined ? locals.showAuth : false;
+%>
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-surface backdrop-blur-md">
+  <div class="flex items-center gap-3">
+    <% if (_showBack) { %>
+      <a href="javascript:history.back()" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors text-primary active:scale-95 duration-150">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+    <% } %>
+    <span class="text-on-surface font-extrabold tracking-tighter font-headline text-lg"><%= _headerTitle %></span>
+  </div>
+  <% if (_showAuth && !locals.isAuthenticated) { %>
+    <nav class="flex items-center gap-4">
+      <a class="text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors" href="/login">Zaloguj</a>
+      <a class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-sm font-bold shadow-sm hover:opacity-90 transition-opacity" href="/register">Dołącz</a>
+    </nav>
+  <% } %>
+  <div class="absolute bottom-0 left-0 bg-surface-container-low h-[1px] w-full"></div>
 </header>
-

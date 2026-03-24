@@ -11,6 +11,8 @@ Zakres obejmuje:
 - logowanie,
 - podstawy wdrożenia.
 
+Opisuje docelową bazę infrastruktury oraz stan obecnego skeletonu repo.
+
 ## Zasada nadrzędna
 Devops w MVP ma upraszczać uruchomienie i utrzymanie projektu.
 Nie budujemy infrastruktury większej niż potrzeba do lokalnego developmentu, demonstracji i prostego wdrożenia.
@@ -33,6 +35,11 @@ Nie budujemy infrastruktury większej niż potrzeba do lokalnego developmentu, d
 - baza developerska,
 - baza testowa lub osobny schemat testowy, jeśli testy zostaną dodane,
 - jawna konfiguracja połączenia przez env.
+
+### Aktualny skeleton repo
+- `src/config/database.js` korzysta z `DATABASE_URL`,
+- `docker/postgres-init/01-init.sql` włącza `pgcrypto`,
+- pełny schemat aplikacyjny nie został jeszcze zapisany w migracji.
 
 ## Migracje i seed
 
@@ -73,8 +80,26 @@ Seed ma tworzyć:
 ### Opcjonalne
 - `ADMIN_SEED_LOGIN`
 - `ADMIN_SEED_PASSWORD`
+- `ADMIN_SEED_IS_ACTIVE`
+- `SESSION_COOKIE_NAME`
+- `SESSION_COOKIE_SECURE`
+- `SESSION_COOKIE_SAME_SITE`
+- `POSTGRES_HOST`
+- `POSTGRES_PORT`
+- `POSTGRES_DB`
+- `POSTGRES_USER`
+- `POSTGRES_PASSWORD`
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASSWORD`
+- `SMTP_FROM_NAME`
+- `SMTP_FROM_EMAIL`
 - `RATE_LIMIT_WINDOW_MS`
 - `RATE_LIMIT_MAX_REQUESTS`
+- `BODY_LIMIT`
+- `TRUST_PROXY`
 
 ### Zasady
 - Sekrety tylko w env, nigdy w repo.
@@ -109,6 +134,9 @@ Ma:
 - `app`,
 - `db`.
 
+W aktualnym repo Compose zawiera także:
+- `smtp` (Mailpit) jako developerski serwis testowy.
+
 ### Zasady dla `app`
 - zależność od bazy,
 - dostęp do env,
@@ -120,9 +148,20 @@ Ma:
 - jawne porty tylko gdy potrzebne lokalnie,
 - podstawowy healthcheck.
 
+### Zasady dla `smtp`
+- serwis pomocniczy tylko dla developmentu,
+- nie jest jeszcze używany przez logikę aplikacyjną,
+- służy do bezpiecznego testowania przyszłych flow opartych o SMTP.
+
 ### Rekomendowany healthcheck
 - baza zgłasza gotowość przed pełnym startem aplikacji,
 - aplikacja przy błędzie połączenia powinna logować problem czytelnie i kończyć start albo ponawiać próbę w prosty sposób.
+
+### Zgodność z aktualnym repo
+- `docker-compose.yml` ma healthcheck bazy,
+- `app` zależy od `db` i `smtp`,
+- `Dockerfile` używa `node:20-alpine`,
+- kontener aplikacji działa jako użytkownik `node`.
 
 ## Bezpieczeństwo aplikacyjne
 
@@ -198,6 +237,7 @@ Rekomendowane pliki w repo:
 Opcjonalnie:
 - `docker/entrypoint.sh`
 - `docker/postgres-init/`
+- `scripts/db/`
 
 ## Ryzyka i miejsca łatwe do pominięcia
 - Uruchomienie aplikacji bez migracji i seeda.
@@ -210,7 +250,7 @@ Opcjonalnie:
 ## Krótka checklista devops i security
 - Czy baza jest konfigurowana przez env?
 - Czy istnieją migracje i seed?
-- Czy kontenery obejmują tylko `app` i `db`?
+- Czy kontenery obejmują wymagane serwisy developerskie (`app`, `db`, opcjonalnie `smtp`)?
 - Czy PostgreSQL ma trwały wolumen?
 - Czy sesje i hasła są zabezpieczone?
 - Czy CSRF i walidacja są uwzględnione?

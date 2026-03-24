@@ -1,7 +1,10 @@
 # COMPLETENESS_CHECKLIST
 
 ## Cel dokumentu
-Ta checklista służy do szybkiej kontroli, czy plan techniczny MVP `dlaczegozyc.pl` obejmuje wszystkie wymagane obszary i czy nic nie zostało pominięte między dokumentacją produktu, UI i techniką.
+Ta checklista służy do kontroli kompletności dokumentacji i spójności planu technicznego MVP.
+
+Nie jest to checklista ukończonej implementacji.
+Stan implementacji opisuje `docs/tech/IMPLEMENTATION_STATUS.md`.
 
 ## Zakres objęty kontrolą
 - auth,
@@ -106,7 +109,7 @@ Ta checklista służy do szybkiej kontroli, czy plan techniczny MVP `dlaczegozyc
 - [x] Jest wskazane minimalne użycie kontenerów.
 
 ### 14. Docker Compose
-- [x] Jest układ `app + db`.
+- [x] Jest opis minimalnego układu developerskiego Compose.
 - [x] Jest trwały wolumen dla bazy.
 - [x] Jest healthcheck.
 - [x] Jest konfiguracja env.
@@ -151,6 +154,14 @@ Ta checklista służy do szybkiej kontroli, czy plan techniczny MVP `dlaczegozyc
 - Nie skopiować 1:1 ozdobników i dark mode z wygenerowanych ekranów Stitch.
 - Nie pominąć CSRF, walidacji i kontroli właściciela wpisu.
 - Nie rozbić jednej nawigacji na osobne lokalne wyjątki.
+
+### Co nie jest jeszcze gotowe w kodzie
+- realne CSRF,
+- realne migracje SQL,
+- realne seedy,
+- realna autoryzacja użytkownika,
+- realna walidacja formularzy,
+- finalne widoki zgodne ze Stitch.
 
 ## Otwarte decyzje niskiego ryzyka
 Te elementy nie blokują planu technicznego, ale przy implementacji trzeba je po prostu wybrać konsekwentnie:

@@ -4,6 +4,9 @@
 Ten dokument opisuje minimalny model danych dla MVP `dlaczegozyc.pl`.
 Opis jest architektoniczny: wskazuje encje, relacje, pola kluczowe i zasady przechowywania danych.
 
+To jest model docelowy.
+Aktualne pliki SQL w repo są jeszcze skeletonem, nie pełną implementacją tego modelu.
+
 ## Założenia modelu
 - Dane mają być trwałe i przechowywane w PostgreSQL.
 - Model ma wspierać wyłącznie zakres MVP.
@@ -164,6 +167,13 @@ Rekomendowane wartości:
   - `help_sections.status, display_order`.
 - Trzymać strukturę bazy w migracjach, nie w ręcznych zmianach.
 - Wszystkie zapytania wykonywać parametryzowanie.
+
+## Zgodność z aktualnym repo
+- istnieje katalog `src/db/migrations/`,
+- istnieje katalog `src/db/seeds/`,
+- istnieją skrypty `scripts/db/migrate.js`, `scripts/db/seed.js`, `scripts/db/reset.js`,
+- plik `src/db/migrations/0001_init_schema.sql` jest jeszcze placeholderem,
+- plik `src/db/seeds/0001_seed_dev.sql` jest jeszcze placeholderem.
 
 ## Seed danych
 Seed ma zapewnić:

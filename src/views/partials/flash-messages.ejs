@@ -1,4 +1,12 @@
-<% if (flash) { %>
-  <div><%= flash.message %></div>
+<% if (locals.flash) { %>
+  <% if (flash.success) { %>
+    <div class="mb-6 p-4 bg-tertiary-container rounded-2xl text-on-tertiary-container text-sm font-medium">
+      <%= flash.success %>
+    </div>
+  <% } %>
+  <% if (flash.error) { %>
+    <div class="mb-6 p-4 bg-error-container rounded-2xl text-on-error-container text-sm font-medium">
+      <%= flash.error %>
+    </div>
+  <% } %>
 <% } %>
-

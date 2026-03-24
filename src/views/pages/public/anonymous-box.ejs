@@ -1,6 +1,52 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle %></title></head>
-  <body><h1>Anonimowa skrzynka (placeholder)</h1></body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { headerTitle: 'dlaczegozyc.pl' }) %>
 
+<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full flex flex-col">
+  <section class="mb-10 text-left">
+    <h2 class="font-headline text-3xl font-extrabold text-on-surface mb-4 leading-tight">
+      Anonimowa przestrzeń
+    </h2>
+    <p class="text-on-surface-variant text-lg leading-relaxed">
+      Opisz to, co czujesz. Bez oceniania, bez zbędnych pytań. Jesteśmy tu, by Cię wysłuchać.
+    </p>
+  </section>
+
+  <%- include('../../partials/flash-messages') %>
+
+  <form method="POST" action="/anonymous-box" class="flex-grow flex flex-col gap-8">
+    <div class="relative group">
+      <div class="absolute inset-0 bg-primary-container/20 rounded-3xl blur-2xl -z-10 opacity-0 group-focus-within:opacity-100 transition-opacity duration-500"></div>
+      <div class="bg-surface-container-lowest rounded-3xl p-1 shadow-sm">
+        <textarea
+          name="body"
+          class="w-full min-h-[280px] bg-transparent border-none focus:ring-0 text-on-surface text-lg leading-relaxed placeholder:text-outline/40 p-6 font-body resize-none"
+          placeholder="Napisz tutaj o swojej sytuacji..."
+          required
+          minlength="5"
+          maxlength="5000"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-5 bg-tertiary-container/30 rounded-2xl border border-tertiary-fixed-dim/20">
+      <span class="material-symbols-outlined text-primary mt-0.5" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+      <p class="text-on-tertiary-fixed-variant text-sm font-medium leading-normal">
+        Twoja wiadomość jest całkowicie anonimowa. Nie zbieramy danych osobowych ani adresów IP.
+      </p>
+    </div>
+
+    <div class="mt-auto pt-10">
+      <button type="submit" class="w-full h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg flex items-center justify-center gap-3 shadow-[0_12px_32px_rgba(27,109,36,0.15)] hover:brightness-105 active:scale-95 transition-all duration-300">
+        Wyślij wiadomość
+        <span class="material-symbols-outlined">send</span>
+      </button>
+    </div>
+  </form>
+</main>
+
+<%- include('../../partials/navigation-public') %>
+</body>
+</html>

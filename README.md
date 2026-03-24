@@ -18,7 +18,13 @@ Kluczowe katalogi:
 - `src/db/` - migracje, seedy i SQL
 - `scripts/db/` - skrypty uruchamiania migracji i seedów
 - `docker/` - pliki pomocnicze dla kontenerów
-- `docs/tech/` - plan techniczny MVP
+- `docs/` - dokumentacja produktu, UI i techniki
+
+Punkt wejścia do dokumentacji:
+- `docs/README.md`
+
+Aktualny stan skeletonu:
+- `docs/tech/IMPLEMENTATION_STATUS.md`
 
 ## Konfiguracja środowiska
 1. Skopiuj `.env.example` do `.env`.

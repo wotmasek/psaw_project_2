@@ -1,4 +1,12 @@
-<section>
-  <p>Brak danych do wyświetlenia.</p>
-</section>
-
+<%
+  const _emptyIcon = locals.emptyIcon || 'eco';
+  const _emptyTitle = locals.emptyTitle || 'Nic tu jeszcze nie ma';
+  const _emptyMessage = locals.emptyMessage || 'Wróć później — pojawi się tu coś dobrego.';
+%>
+<div class="flex flex-col items-center justify-center py-16 px-6 text-center">
+  <div class="w-20 h-20 bg-surface-container flex items-center justify-center rounded-full mb-6">
+    <span class="material-symbols-outlined text-outline text-4xl"><%= _emptyIcon %></span>
+  </div>
+  <h3 class="font-headline font-bold text-xl text-on-surface mb-2"><%= _emptyTitle %></h3>
+  <p class="text-on-surface-variant leading-relaxed"><%= _emptyMessage %></p>
+</div>

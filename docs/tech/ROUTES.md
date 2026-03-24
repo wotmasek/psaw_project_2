@@ -4,6 +4,9 @@
 Ten dokument mapuje trasy HTTP na moduły aplikacji, widoki EJS i poziomy dostępu.
 Ma być źródłem prawdy dla routingu Express w MVP.
 
+Opisuje docelowy kontrakt HTTP i układ modułów.
+Aktualny stan implementacji skeletonu jest zgodny strukturalnie, ale większość akcji `POST` jest jeszcze placeholderem.
+
 ## Zasady ogólne
 - Wszystkie zapisy odbywają się przez formularze HTML i `POST`.
 - `GET /` jest obowiązkowe.
@@ -99,7 +102,7 @@ Powinien być używany przez:
 ### `success-state`
 Jest używany dla flow typu:
 - wysłanie anonimowej wiadomości,
-- poprawna rejestracja,
+- poprawna rejestracja jako komunikat lub redirect do `/login`,
 - poprawny zapis wpisu lub pomocy.
 
 ## Powiązanie ekranów z nazwami Stitch
@@ -122,7 +125,7 @@ W implementacji routingu i widoków obowiązują nazwy kanoniczne z dokumentacji
 
 ### Public
 - `attach-current-user`,
-- opcjonalnie `csrf-protection` na formularzach z `POST`.
+- `csrf-protection` na formularzach z `POST`.
 
 ### Auth
 - `attach-current-user`,
@@ -146,6 +149,12 @@ W implementacji routingu i widoków obowiązują nazwy kanoniczne z dokumentacji
 - `auth.routes.js`
 - `user.routes.js`
 - `admin.routes.js`
+
+## Zgodność z aktualnym repo
+- pliki tras o tych nazwach już istnieją w `src/routes/`,
+- redirect do `/auth-required` jest już używany przez `require-auth`,
+- widoki z tabel tras istnieją jako placeholdery EJS,
+- kontrolery nie mają jeszcze finalnej logiki biznesowej.
 
 ## Rzeczy świadomie poza MVP
 - REST API dla frontendu SPA,
