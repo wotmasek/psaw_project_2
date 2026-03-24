@@ -1,10 +1,41 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle %></title></head>
-  <body>
-    <h1>Wymagane logowanie</h1>
-    <p>Aby wejść dalej, zaloguj się.</p>
-    <a href="/login">Przejdź do logowania</a>
-  </body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'dlaczegozyc.pl', showAuth: false }) %>
 
+<main class="flex-1 flex flex-col items-center justify-center px-6 pt-24 pb-12">
+  <div class="w-full max-w-md flex flex-col items-center text-center">
+    <div class="w-24 h-24 bg-surface-container-low rounded-full flex items-center justify-center mb-8 shadow-sm">
+      <span class="material-symbols-outlined text-primary text-5xl">lock_open</span>
+    </div>
+
+    <h1 class="font-headline font-bold text-2xl mb-4 text-on-surface tracking-tight">
+      Witaj w naszej bezpiecznej przestrzeni
+    </h1>
+    <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-12 px-2">
+      Ta sekcja jest dostępna dla zalogowanych użytkowników. Chcemy zapewnić Ci prywatność i spersonalizowane wsparcie.
+    </p>
+
+    <div class="w-full space-y-4">
+      <a href="/login" class="w-full h-14 signature-gradient text-on-primary font-body font-semibold rounded-xl shadow-lg active:scale-95 transition-all duration-150 flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined">login</span>
+        Zaloguj się
+      </a>
+      <a href="/register" class="w-full h-14 bg-surface-container-lowest text-on-surface font-body font-semibold rounded-xl border border-outline/20 active:scale-95 transition-all duration-150 flex items-center justify-center">
+        Załóż konto
+      </a>
+    </div>
+
+    <a href="/" class="mt-8 text-outline font-body text-sm font-medium hover:text-primary transition-colors flex items-center gap-2">
+      <span class="material-symbols-outlined text-sm">home</span>
+      Powrót do strony głównej
+    </a>
+  </div>
+</main>
+
+<footer class="w-full py-8 px-6 text-center">
+  <p class="text-outline/60 font-body text-xs">Twoje dane są u nas bezpieczne.</p>
+</footer>
+</body>
+</html>

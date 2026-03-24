@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pl">
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { showBack: true, headerTitle: inspiration ? 'Edycja inspiracji' : 'Nowa inspiracja', showAuth: false }) %>
+
+<main class="flex-1 pt-24 pb-12 px-6 max-w-md mx-auto w-full">
+  <div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10">
+    <% if (errors && errors.length) { %>
+      <div class="flex items-start gap-2 bg-error-container/10 p-3 rounded-lg border border-error/10 mb-6">
+        <span class="material-symbols-outlined text-error text-sm mt-0.5">error</span>
+        <div><% errors.forEach(function(err) { %><p class="text-xs text-error font-medium"><%= err %></p><% }); %></div>
+      </div>
+    <% } %>
+
+    <form method="post" action="<%= inspiration ? '/admin/inspirations/' + inspiration.id : '/admin/inspirations' %>" class="space-y-5">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="emoji">Emoji</label>
+        <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="emoji" name="emoji" type="text" value="<%= formData.emoji || '' %>" placeholder="✨" />
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="title">Tytuł</label>
+        <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="title" name="title" type="text" value="<%= formData.title || '' %>" placeholder="Tytuł inspiracji" />
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="content">Treść</label>
+        <textarea class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50 min-h-[120px] resize-y" id="content" name="content" placeholder="Treść inspiracji"><%= formData.content || '' %></textarea>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="status">Status</label>
+        <select class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface" id="status" name="status">
+          <option value="draft" <%= (formData.status || 'draft') === 'draft' ? 'selected' : '' %>>Szkic</option>
+          <option value="published" <%= formData.status === 'published' ? 'selected' : '' %>>Opublikowany</option>
+          <option value="archived" <%= formData.status === 'archived' ? 'selected' : '' %>>Zarchiwizowany</option>
+        </select>
+      </div>
+
+      <button class="w-full signature-gradient text-on-primary font-headline font-bold py-4 rounded-lg shadow-md hover:brightness-110 active:scale-95 transition-all duration-150" type="submit">
+        <%= inspiration ? 'Zapisz zmiany' : 'Dodaj inspirację' %>
+      </button>
+    </form>
+  </div>
+
+  <% if (inspiration) { %>
+    <div class="mt-6">
+      <form method="post" action="/admin/inspirations/<%= inspiration.id %>/delete" onsubmit="return confirm('Usunąć inspirację?')">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+        <button class="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-error font-bold hover:bg-error-container/10 transition-colors border border-error/20" type="submit">
+          <span class="material-symbols-outlined">delete</span> Usuń inspirację
+        </button>
+      </form>
+    </div>
+  <% } %>
+</main>
+</body>
+</html>

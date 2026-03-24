@@ -1,11 +1,13 @@
-const crypto = require("crypto");
+const bcrypt = require("bcrypt");
 
-function hashPlaceholder(password) {
-  // Placeholder helper for skeleton only.
-  return crypto.createHash("sha256").update(password).digest("hex");
+const SALT_ROUNDS = 12;
+
+async function hash(plaintext) {
+  return bcrypt.hash(plaintext, SALT_ROUNDS);
 }
 
-module.exports = {
-  hashPlaceholder
-};
+async function verify(plaintext, hash) {
+  return bcrypt.compare(plaintext, hash);
+}
 
+module.exports = { hash, verify };

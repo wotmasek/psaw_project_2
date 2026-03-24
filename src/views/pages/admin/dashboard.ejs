@@ -1,12 +1,83 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle %></title></head>
-  <body>
-    <h1>Panel admina (placeholder)</h1>
-    <ul>
-      <li><a href="/admin/entries">Zarządzanie treściami</a></li>
-      <li><a href="/admin/help/edit">Sekcja pomocy</a></li>
-    </ul>
-  </body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<%- include('../../partials/header', { showBack: false, headerTitle: 'dlaczegozyc.pl', showAuth: false }) %>
 
+<main class="pt-24 px-6 space-y-8 max-w-md mx-auto">
+  <header class="space-y-1">
+    <p class="text-sm font-semibold text-primary uppercase tracking-wider">Panel Administratora</p>
+    <h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">Witaj, Administratorze</h2>
+  </header>
+
+  <section class="grid grid-cols-2 gap-4">
+    <div class="col-span-2 bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between shadow-sm">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary p-2 bg-primary-container/30 rounded-lg">mail</span>
+        <% if (msgCounts.new > 0) { %>
+          <span class="text-xs font-bold text-primary bg-primary-container px-2 py-1 rounded-full"><%= msgCounts.new %> nowych</span>
+        <% } %>
+      </div>
+      <div>
+        <p class="text-sm text-on-surface-variant">Anonimowe wiadomości</p>
+        <p class="text-3xl font-headline font-bold text-on-surface"><%= msgCounts.new + msgCounts.reviewed + msgCounts.archived %></p>
+      </div>
+    </div>
+    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+      <span class="material-symbols-outlined text-tertiary mb-2">auto_awesome</span>
+      <p class="text-xs text-on-surface-variant">Inspiracje</p>
+      <p class="text-xl font-headline font-bold"><%= inspCounts.published %> pub.</p>
+    </div>
+    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+      <span class="material-symbols-outlined text-secondary mb-2">edit_note</span>
+      <p class="text-xs text-on-surface-variant">Wpisy</p>
+      <p class="text-xl font-headline font-bold"><%= entryCounts.active + entryCounts.saved + entryCounts.archived %></p>
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h3 class="text-lg font-headline font-bold text-on-surface">Zarządzanie</h3>
+    <div class="grid grid-cols-1 gap-3">
+      <a href="/admin/inspirations" class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors group">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+          </div>
+          <span class="font-semibold text-on-surface">Inspiracje</span>
+        </div>
+        <span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+      </a>
+      <a href="/admin/messages" class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors group">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary">mail</span>
+          </div>
+          <span class="font-semibold text-on-surface">Anonimowe wiadomości</span>
+        </div>
+        <span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+      </a>
+      <a href="/admin/entries" class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors group">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary">edit_note</span>
+          </div>
+          <span class="font-semibold text-on-surface">Wpisy użytkowników</span>
+        </div>
+        <span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+      </a>
+      <a href="/admin/help" class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors group">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-outline-variant/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-outline">line_end</span>
+          </div>
+          <span class="font-semibold text-on-surface">Sekcja pomocy</span>
+        </div>
+        <span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<%- include('../../partials/navigation-admin') %>
+</body>
+</html>

@@ -1,6 +1,24 @@
-<nav>
-  <a href="/admin">Admin</a>
-  <a href="/admin/entries">Treści</a>
-  <a href="/admin/help/edit">Pomoc</a>
+<%
+  const _activePage = locals.activePage || '';
+  const _navItems = [
+    { id: 'admin-dashboard', icon: 'dashboard', label: 'Dashboard', href: '/admin' },
+    { id: 'admin-inspirations', icon: 'auto_awesome', label: 'Inspiracje', href: '/admin/inspirations' },
+    { id: 'admin-messages', icon: 'mail', label: 'Skrzynka', href: '/admin/messages' },
+    { id: 'admin-help', icon: 'line_end', label: 'Pomoc', href: '/admin/help' },
+  ];
+%>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+  <% _navItems.forEach(function(item) { %>
+    <% if (_activePage === item.id) { %>
+      <a class="flex flex-col items-center justify-center bg-gradient-to-br from-primary to-primary-container text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="<%= item.href %>">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;"><%= item.icon %></span>
+        <span class="font-label text-[11px] font-medium leading-relaxed"><%= item.label %></span>
+      </a>
+    <% } else { %>
+      <a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:text-primary transition-all duration-300 ease-out" href="<%= item.href %>">
+        <span class="material-symbols-outlined"><%= item.icon %></span>
+        <span class="font-label text-[11px] font-medium leading-relaxed"><%= item.label %></span>
+      </a>
+    <% } %>
+  <% }); %>
 </nav>
-

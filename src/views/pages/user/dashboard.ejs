@@ -1,9 +1,98 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle %></title></head>
-  <body>
-    <h1>Panel użytkownika (placeholder)</h1>
-    <a href="/my-entries">Moje wpisy</a>
-  </body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<%- include('../../partials/header', { showBack: false, headerTitle: 'dlaczegozyc.pl', showAuth: false }) %>
 
+<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+  <%
+    const flash = locals.currentUser && req.session.flash || {};
+    if (req.session.flash) req.session.flash = null;
+  %>
+  <% if (flash.success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10 mb-6">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= flash.success %></p>
+    </div>
+  <% } %>
+
+  <section class="mb-10">
+    <h2 class="font-headline text-3xl font-extrabold text-on-surface leading-tight tracking-tight mb-2">
+      Witaj<% if (locals.currentUser && locals.currentUser.firstName) { %>, <%= currentUser.firstName %><% } %>
+    </h2>
+    <p class="text-on-surface-variant text-lg leading-relaxed opacity-80">To jest Twoja bezpieczna przestrzeń do refleksji i odnajdywania spokoju.</p>
+  </section>
+
+  <section class="mb-12">
+    <h3 class="font-headline text-xs font-bold uppercase tracking-widest text-outline mb-4 px-1">Szybki dostęp</h3>
+    <div class="grid grid-cols-1 gap-4">
+      <a class="group relative flex items-center p-5 bg-surface-container-lowest rounded-2xl transition-all duration-300 hover:bg-surface-container-low border border-outline-variant/10 shadow-sm" href="/my-entries">
+        <div class="w-12 h-12 rounded-xl bg-tertiary-container/50 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-tertiary text-2xl">edit_note</span>
+        </div>
+        <div class="flex-1">
+          <span class="block font-headline font-bold text-on-surface">Moje wpisy</span>
+          <span class="text-xs text-on-surface-variant">Twój dziennik i notatki</span>
+        </div>
+        <span class="material-symbols-outlined text-outline/30 group-hover:text-primary transition-colors">chevron_right</span>
+      </a>
+      <a class="group relative flex items-center p-5 bg-surface-container-lowest rounded-2xl transition-all duration-300 hover:bg-surface-container-low border border-outline-variant/10 shadow-sm" href="/inspirations">
+        <div class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+        </div>
+        <div class="flex-1">
+          <span class="block font-headline font-bold text-on-surface">Inspiracje</span>
+          <span class="text-xs text-on-surface-variant">Zapisane cytaty i historie</span>
+        </div>
+        <span class="material-symbols-outlined text-outline/30 group-hover:text-primary transition-colors">chevron_right</span>
+      </a>
+      <a class="group relative flex items-center p-5 bg-gradient-to-br from-primary to-primary-container rounded-2xl transition-all duration-300 shadow-lg shadow-primary/10" href="/help">
+        <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4">
+          <span class="material-symbols-outlined text-white text-2xl">line_end</span>
+        </div>
+        <div class="flex-1 text-white">
+          <span class="block font-headline font-bold">Znajdź pomoc</span>
+          <span class="text-xs opacity-90">Wsparcie i telefony zaufania</span>
+        </div>
+        <span class="material-symbols-outlined text-white/50">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h3 class="font-headline text-xs font-bold uppercase tracking-widest text-outline mb-4 px-1">Ostatnia aktywność</h3>
+    <% if (!entries || entries.length === 0) { %>
+      <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+          <span class="material-symbols-outlined text-outline-variant text-4xl">history_edu</span>
+        </div>
+        <p class="font-headline font-bold text-on-surface text-lg mb-2">Brak niedawnych wpisów</p>
+        <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Tu pojawią się Twoje zapisane myśli. Zacznij pisać, aby śledzić swoją drogę do równowagi.</p>
+        <a href="/entries/new" class="px-8 py-3 bg-white text-primary border border-primary/20 font-headline font-bold rounded-full hover:bg-primary-container/20 transition-colors active:scale-95 duration-150">
+          Stwórz pierwszy wpis
+        </a>
+      </div>
+    <% } else { %>
+      <div class="space-y-3">
+        <% entries.forEach(function(entry) { %>
+          <a href="/entries/<%= entry.id %>/edit" class="block bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors">
+            <h4 class="font-headline font-bold text-on-surface mb-1 truncate"><%= entry.title %></h4>
+            <p class="text-xs text-on-surface-variant truncate"><%= entry.body %></p>
+            <p class="text-[10px] text-outline mt-2"><%= new Date(entry.created_at).toLocaleDateString('pl-PL') %></p>
+          </a>
+        <% }); %>
+        <% if (totalEntries > 3) { %>
+          <a href="/my-entries" class="block text-center text-sm text-primary font-semibold py-2 hover:underline">Zobacz wszystkie (<%= totalEntries %>)</a>
+        <% } %>
+      </div>
+    <% } %>
+  </section>
+</main>
+
+<a href="/entries/new" class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 hover:shadow-primary/20 z-40">
+  <span class="material-symbols-outlined text-3xl">add</span>
+</a>
+
+<%- include('../../partials/navigation-user') %>
+</body>
+</html>

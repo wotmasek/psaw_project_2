@@ -1,17 +1,16 @@
-/* eslint-disable no-console */
 const fs = require("fs/promises");
 const path = require("path");
 const { pool } = require("../../src/config/database");
 
 async function run() {
-  const migrationPath = path.resolve(__dirname, "../../src/db/migrations/0001_init_schema.sql");
-  const sql = await fs.readFile(migrationPath, "utf8");
-  if (!sql.trim()) {
-    console.log("[db:migrate] migration file is empty.");
-    return;
+  const dir = path.resolve(__dirname, "../../src/db/migrations");
+  const files = (await fs.readdir(dir)).filter((f) => f.endsWith(".sql")).sort();
+  for (const file of files) {
+    const sql = await fs.readFile(path.join(dir, file), "utf8");
+    if (!sql.trim()) continue;
+    await pool.query(sql);
+    console.log(`[db:migrate] ${file} executed.`);
   }
-  await pool.query(sql);
-  console.log("[db:migrate] migration executed.");
 }
 
 run()
@@ -22,4 +21,3 @@ run()
   .finally(async () => {
     await pool.end();
   });
-

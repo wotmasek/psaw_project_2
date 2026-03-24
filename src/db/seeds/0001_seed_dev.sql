@@ -2,16 +2,21 @@
 -- Admin account  (password: admin123 – dev only)
 -- hash = crypt('admin123', gen_salt('bf'))
 -- ==========================================================
-INSERT INTO users (login, password_hash, is_admin)
-VALUES ('admin', crypt('admin123', gen_salt('bf')), TRUE)
-ON CONFLICT (login) DO NOTHING;
+INSERT INTO users (login, password_hash, is_admin, email, first_name, last_name)
+VALUES ('admin', crypt('admin123', gen_salt('bf')), TRUE, 'admin@dlaczegozyc.local', 'Admin', '')
+ON CONFLICT (login) DO UPDATE SET
+  email = EXCLUDED.email,
+  first_name = EXCLUDED.first_name;
 
 -- ==========================================================
 -- Regular user  (password: user123 – dev only)
 -- ==========================================================
-INSERT INTO users (login, password_hash, is_admin)
-VALUES ('user', crypt('user123', gen_salt('bf')), FALSE)
-ON CONFLICT (login) DO NOTHING;
+INSERT INTO users (login, password_hash, is_admin, email, first_name, last_name)
+VALUES ('user', crypt('user123', gen_salt('bf')), FALSE, 'user@dlaczegozyc.local', 'Aleksandra', 'Kowalska')
+ON CONFLICT (login) DO UPDATE SET
+  email = EXCLUDED.email,
+  first_name = EXCLUDED.first_name,
+  last_name = EXCLUDED.last_name;
 
 -- ==========================================================
 -- Inspirations (published – visible on public wall)

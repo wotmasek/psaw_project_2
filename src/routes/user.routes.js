@@ -12,5 +12,9 @@ router.post("/entries", requireAuth, csrfProtection, controller.createEntry);
 router.get("/entries/:id/edit", requireAuth, controller.editEntryView);
 router.post("/entries/:id", requireAuth, csrfProtection, controller.editEntry);
 
-module.exports = router;
+router.get("/settings", requireAuth, controller.settingsView);
+router.post("/settings/profile", requireAuth, csrfProtection, controller.updateProfile);
+router.post("/settings/email", requireAuth, csrfProtection, controller.updateEmail);
+router.post("/settings/password", requireAuth, csrfProtection, controller.changePassword);
 
+module.exports = router;

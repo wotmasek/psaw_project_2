@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pl">
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'Inspiracje', showAuth: false }) %>
+
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto space-y-6">
+  <% if (success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= success %></p>
+    </div>
+  <% } %>
+
+  <% if (!inspirations || inspirations.length === 0) { %>
+    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8">
+      <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+        <span class="material-symbols-outlined text-outline-variant text-4xl">auto_awesome</span>
+      </div>
+      <p class="font-headline font-bold text-on-surface text-lg mb-2">Brak inspiracji</p>
+      <p class="text-on-surface-variant text-sm mb-8">Dodaj pierwszą inspirację, aby pojawiła się na publicznej ścianie.</p>
+    </div>
+  <% } else { %>
+    <div class="space-y-3">
+      <% inspirations.forEach(function(insp) { %>
+        <div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 <%= insp.status === 'published' ? 'border-primary' : insp.status === 'archived' ? 'border-outline-variant' : 'border-secondary' %>">
+          <div class="flex justify-between items-start mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xl"><%= insp.emoji || '✨' %></span>
+              <h3 class="font-bold text-on-surface text-sm truncate max-w-[200px]"><%= insp.title %></h3>
+            </div>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full <%= insp.status === 'published' ? 'bg-tertiary-container text-on-tertiary-container' : insp.status === 'archived' ? 'bg-surface-container-high text-on-surface-variant' : 'bg-secondary-container text-on-secondary-container' %>"><%= insp.status %></span>
+          </div>
+          <p class="text-on-surface-variant text-xs line-clamp-2 mb-3"><%= insp.content %></p>
+          <div class="flex items-center justify-between border-t border-surface-container pt-2">
+            <span class="text-[10px] text-outline"><%= insp.source %> · <%= new Date(insp.created_at).toLocaleDateString('pl-PL') %></span>
+            <div class="flex gap-1">
+              <a href="/admin/inspirations/<%= insp.id %>/edit" class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-lg">edit</span>
+              </a>
+              <form method="post" action="/admin/inspirations/<%= insp.id %>/delete" class="inline" onsubmit="return confirm('Usunąć inspirację?')">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+                <button type="submit" class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+                  <span class="material-symbols-outlined text-lg">delete_outline</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</main>
+
+<a href="/admin/inspirations/new" class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 z-40">
+  <span class="material-symbols-outlined text-3xl">add</span>
+</a>
+
+<%- include('../../partials/navigation-admin') %>
+</body>
+</html>

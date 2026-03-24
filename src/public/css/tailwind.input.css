@@ -16,3 +16,9 @@
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
 }
+
+@layer components {
+  .signature-gradient {
+    background: linear-gradient(135deg, #1b6d24, #a3f69c);
+  }
+}

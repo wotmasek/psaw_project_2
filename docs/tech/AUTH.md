@@ -181,19 +181,23 @@ Stosować dla brakującej ścieżki lub rekordu, którego nie ma albo nie powini
 - Nie trzymać sekretów w repozytorium.
 
 ## Zgodność z aktualnym repo
-- sesja jest już skonfigurowana w `src/config/session.js`,
+- sesja jest skonfigurowana w `src/config/session.js` (express-session + connect-pg-simple),
 - cookie sesyjne jest parametryzowane env,
 - logout działa jako `POST`,
-- auth controller jest jeszcze placeholderem i nie wykonuje prawdziwej autoryzacji do bazy,
+- auth controller implementuje pełny flow: rejestracja, logowanie, wylogowanie, reset hasła,
+- hasła hashowane bcrypt (SALT_ROUNDS = 12) w `src/lib/password.js`,
+- reset hasła: token SHA-256, wygasanie 1h, email przez nodemailer (`src/lib/mailer.js`),
+- tabela `password_reset_tokens` w migracji `0002_auth_profile_reset.sql`,
+- ustawienia użytkownika: profil (imię, nazwisko), email, zmiana hasła w `src/controllers/user.controller.js`,
 - middleware CSRF jest jeszcze placeholderem.
 
 ## Elementy świadomie poza MVP
-- odzyskiwanie hasła,
 - logowanie przez Google i inne social loginy,
 - 2FA,
 - zarządzanie rolami z panelu,
 - reset sesji na wszystkich urządzeniach,
-- potwierdzanie maila.
+- potwierdzanie maila,
+- rate-limiting na logowanie i reset hasła.
 
 ## Ryzyka i miejsca łatwe do pominięcia
 - Próba edycji cudzego wpisu przez bezpośredni URL.

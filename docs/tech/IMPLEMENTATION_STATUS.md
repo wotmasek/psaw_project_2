@@ -1,140 +1,120 @@
 # IMPLEMENTATION_STATUS
 
 ## Cel dokumentu
-Ten plik opisuje aktualny stan repo po wygenerowaniu skeletonu MVP.
-Ma rozdzielać:
-- decyzje docelowe,
-- aktualny kod,
-- luki implementacyjne.
+Ten plik opisuje aktualny stan implementacji repo `dlaczegozyc.pl`.
+Rozdziela decyzje docelowe od aktualnego kodu i pozostałych luk.
 
 ## Status ogólny
-Repo jest na etapie:
-- gotowego szkieletu technicznego,
-- uporządkowanej dokumentacji,
-- podstawowej infrastruktury developerskiej,
-- placeholderów dla większości modułów biznesowych.
+Repo jest na etapie kompletnego MVP:
+- działająca publiczna część aplikacji,
+- działający system auth (rejestracja, logowanie, wylogowanie, reset hasła),
+- działające ustawienia użytkownika (profil, email, hasło),
+- działający panel użytkownika z CRUD wpisów,
+- działający panel admina z CRUD inspiracji, CRUD sekcji pomocy, moderacją wiadomości i podglądem wpisów,
+- gotowa infrastruktura developerska (Docker/Podman, PostgreSQL, SMTP).
 
-To nie jest jeszcze działająca implementacja MVP.
+## Co działa w pełni
 
-## Co jest już realnie w repo
+### Publiczna część
+- strona główna `/`,
+- ściana inspiracji `/inspirations`,
+- szczegół inspiracji `/inspirations/:id`,
+- generator inspiracji `/inspirations/generator` (GET + POST),
+- anonimowa skrzynka `/anonymous-box` (GET + POST),
+- potwierdzenie `/anonymous-box/sent`,
+- sekcja pomocy `/help`.
 
-### Struktura aplikacji
-Istnieją katalogi i pliki:
-- `src/config/`
-- `src/routes/`
-- `src/controllers/`
-- `src/services/`
-- `src/repositories/`
-- `src/middleware/`
-- `src/validators/`
-- `src/lib/`
-- `src/views/`
-- `src/public/`
-- `src/db/`
-- `scripts/db/`
+### System auth
+- rejestracja `/register` (GET + POST) — bcrypt hashing, walidacja, duplikaty loginów,
+- logowanie `/login` (GET + POST) — weryfikacja bcrypt, regeneracja sesji,
+- wylogowanie `POST /logout` — niszczenie sesji, czyszczenie cookie,
+- ekran wymagania logowania `/auth-required`,
+- odzyskiwanie hasła `/forgot-password` (GET + POST) — token SHA-256, email przez nodemailer,
+- nowe hasło `/reset-password/:token` (GET + POST) — weryfikacja tokenu, wygasanie,
+- ekran wygasłego/nieprawidłowego tokenu.
 
-### Infrastruktura
-Istnieją:
-- `Dockerfile`
-- `docker-compose.yml`
-- `.env.example`
-- `.gitignore`
-- `.dockerignore`
-- `README.md`
-- `tailwind.config.js`
-- `postcss.config.js`
-- `package.json`
+### Strefa po zalogowaniu
+- dashboard `/dashboard` — powitanie z imieniem, szybki dostęp, ostatnia aktywność,
+- moje wpisy `/my-entries` — lista wpisów użytkownika, stan pusty,
+- nowy wpis `/entries/new` + `POST /entries` — walidacja, zapis,
+- edycja wpisu `/entries/:id/edit` + `POST /entries/:id` — sprawdzenie właściciela,
+- ustawienia `/settings` — profil (imię, nazwisko), email, zmiana hasła, wylogowanie.
 
-### Podstawy runtime
-Istnieją:
-- `src/app.js`
-- `src/server.js`
-- konfiguracja env w `src/config/env.js`
-- konfiguracja PostgreSQL w `src/config/database.js`
-- konfiguracja sesji w `src/config/session.js`
-
-## Co działa jako szkielet
-
-### Routing
-Trasy są fizycznie zdefiniowane w:
-- `src/routes/public.routes.js`
-- `src/routes/auth.routes.js`
-- `src/routes/user.routes.js`
-- `src/routes/admin.routes.js`
-
-### Widoki
-Istnieją placeholdery:
-- stron publicznych,
-- auth,
-- user,
-- admin,
-- widoków shared.
+### Panel admina
+- dashboard `/admin` — podsumowanie: liczba wiadomości, inspiracji, wpisów; skróty do zarządzania,
+- **inspiracje** — pełny CRUD:
+  - lista `/admin/inspirations` z filtrem statusu, edycja/usuwanie inline,
+  - nowa inspiracja `/admin/inspirations/new` (GET) + `POST /admin/inspirations`,
+  - edycja `/admin/inspirations/:id/edit` (GET) + `POST /admin/inspirations/:id`,
+  - usuwanie `POST /admin/inspirations/:id/delete`,
+- **sekcje pomocy** — pełny CRUD:
+  - lista `/admin/help` z kolejnością, statusem, edycja/usuwanie inline,
+  - nowa sekcja `/admin/help/new` (GET) + `POST /admin/help`,
+  - edycja `/admin/help/:id/edit` (GET) + `POST /admin/help/:id`,
+  - usuwanie `POST /admin/help/:id/delete`,
+- **anonimowe wiadomości** — moderacja:
+  - lista `/admin/messages` ze statusami (nowa/przeczytana/archiwum),
+  - podgląd `/admin/messages/:id`,
+  - zmiana statusu `POST /admin/messages/:id/status`,
+  - usuwanie `POST /admin/messages/:id/delete`,
+- **wpisy użytkowników** — podgląd i edycja:
+  - lista `/admin/entries` z autorem i statusem,
+  - edycja `/admin/entries/:id/edit` (GET) + `POST /admin/entries/:id` (tytuł, treść, status),
+  - usuwanie `POST /admin/entries/:id/delete`.
 
 ### Middleware
-Istnieją szkielety:
-- `attach-current-user`
-- `require-auth`
-- `require-admin`
-- `error-handler`
-- `csrf-protection`
+- `attach-current-user` — udostępnia `currentUser`, `isAuthenticated`, `isAdmin` w `res.locals`,
+- `require-auth` — przekierowanie do `/auth-required`,
+- `require-admin` — sprawdzenie roli admin, render 403,
+- `csrf-protection` — placeholder (token pusty, middleware przepuszcza),
+- `error-handler` — 404 i 500 z layoutem publicznym.
+
+### Baza danych
+Schemat:
+- `users` — id, login, password_hash, is_admin, email, first_name, last_name,
+- `entries` — id, user_id, title, body, status,
+- `inspirations` — id, emoji, title, content, source, status, created_by_user_id,
+- `anonymous_messages` — id, body, status,
+- `help_sections` — id, category, title, body, display_order, status,
+- `password_reset_tokens` — id, user_id, token_hash, expires_at, used_at.
+
+Migracje: `0001_init_schema.sql`, `0002_auth_profile_reset.sql`.
+Seed: admin (admin123), user/Aleksandra (user123), inspiracje, wiadomości, pomoc, wpisy.
+
+### Widoki EJS
+Działające widoki z designem Stitch AI:
+- publiczne: home, inspiration-wall, inspiration-detail, inspiration-generator, anonymous-box, anonymous-box-sent, help,
+- auth: register, login, auth-required, forgot-password, reset-password, reset-password-invalid,
+- user: dashboard, my-entries, entry-create, entry-edit, settings,
+- admin: dashboard, inspirations-list, inspiration-form, messages-list, message-view, help-list, help-form, entries-list, entry-edit,
+- shared: error, not-found, forbidden.
+
+Partiale: head, header, navigation-public, navigation-user, navigation-admin, flash-messages, empty-state, footer.
+
+### Infrastruktura
+- Docker/Podman: PostgreSQL 16-alpine, obraz aplikacji Node.js 20-alpine,
+- SMTP: konfiguracja w `src/config/env.js`, `src/lib/mailer.js` z nodemailer,
+- sesje: `express-session` + `connect-pg-simple`,
+- hasła: `bcrypt` (SALT_ROUNDS = 12).
 
 ## Co jest jeszcze placeholderem
 
-### Auth
-- logowanie jest tymczasowym mockiem w kontrolerze,
-- brak prawdziwego sprawdzania użytkownika i hasła,
-- brak prawdziwej rejestracji do bazy,
-- brak finalnej rotacji sesji po logowaniu.
-
 ### CSRF
-`src/middleware/csrf-protection.js` jest tylko placeholderem.
-Dokumentacja wymaga realnej ochrony CSRF, ale nie jest ona jeszcze zaimplementowana.
+`src/middleware/csrf-protection.js` jest placeholderem — token jest pusty, middleware przepuszcza.
+Przed produkcją wymaga podpięcia realnej biblioteki CSRF.
 
-### Dane i baza
-- `src/db/migrations/0001_init_schema.sql` nie zawiera jeszcze finalnego schematu,
-- `src/db/seeds/0001_seed_dev.sql` nie zawiera jeszcze realnego seeda MVP,
-- repozytoria i serwisy nie mają logiki SQL ani use-case'ów.
+### Funkcje user poza CRUD wpisów
+- brak kasowania wpisów przez użytkownika (admin może),
+- brak zmiany statusu wpisów przez użytkownika (admin może),
+- brak potwierdzenia email.
 
-### Walidacja
-Pliki w `src/validators/` istnieją, ale są puste.
-
-### UI
-- layouty i partiale są obecne, ale w wersji minimalnej,
-- brak finalnego złożenia ekranów zgodnie z makietami Stitch,
-- brak finalnego builda CSS używanego jako jedyne źródło stylu produkcyjnego.
-
-## Infrastruktura: stan aktualny
-
-### Docker Compose
-Compose uruchamia 3 serwisy:
-- `app`
-- `db`
-- `smtp` (Mailpit)
-
-### SMTP
-SMTP jest przygotowany infrastrukturalnie, ale:
-- nie ma jeszcze logiki aplikacyjnej, która go używa,
-- zmienne `SMTP_*` są placeholderami na przyszłe etapy.
-
-### Sesje
-Aktualny kod używa:
-- `express-session`
-- `connect-pg-simple`
-- tabeli `user_sessions` tworzonej automatycznie przez store
-
-To oznacza, że sesja jest projektowana jako store w PostgreSQL, nie jako pamięciowy store developerski.
-
-## Główne luki przed implementacją MVP
-- prawdziwy schemat SQL,
-- prawdziwy seed danych,
-- realna autoryzacja i rejestracja,
-- realna walidacja,
-- realne CRUD dla user/admin,
-- realne generowanie i zapis inspiracji,
-- realne operacje anonimowej skrzynki,
-- finalne wyrenderowanie UI zgodnie z dokumentami i materiałami Stitch.
+## Główne luki przed produkcją
+- CSRF z prawdziwym tokenem,
+- rate-limiting na logowanie i reset hasła,
+- potwierdzenie zmiany emaila (opcjonalne w MVP),
+- wersja desktop panelu admina (mobile-first działa, desktop wymaga sidebar).
 
 ## Zasada dla kolejnych agentów
-- Nie zakładaj, że istniejąca struktura oznacza gotową funkcję.
-- Jeśli plik ma TODO, placeholder lub mock, traktuj to jako część szkieletu.
-- Najpierw sprawdź ten dokument, potem przejdź do odpowiednich plików w `docs/tech/`.
+- Publiczna część, auth, panel użytkownika i panel admina są gotowe do użycia.
+- CSRF wymaga podpięcia prawdziwej biblioteki.
+- Nie zakładaj, że placeholder oznacza gotową funkcję.

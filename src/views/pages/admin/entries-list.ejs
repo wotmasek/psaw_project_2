@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'Wpisy użytkowników', showAuth: false }) %>
+
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto space-y-6">
+  <% if (success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= success %></p>
+    </div>
+  <% } %>
+
+  <% if (!entries || entries.length === 0) { %>
+    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8">
+      <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+        <span class="material-symbols-outlined text-outline-variant text-4xl">edit_note</span>
+      </div>
+      <p class="font-headline font-bold text-on-surface text-lg mb-2">Brak wpisów</p>
+      <p class="text-on-surface-variant text-sm">Gdy użytkownicy dodadzą wpisy, pojawią się tutaj.</p>
+    </div>
+  <% } else { %>
+    <div class="space-y-3">
+      <% entries.forEach(function(entry) { %>
+        <div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 <%= entry.status === 'active' ? 'border-primary' : entry.status === 'saved' ? 'border-secondary' : 'border-outline-variant' %>">
+          <div class="flex justify-between items-start mb-2">
+            <div>
+              <h3 class="font-bold text-on-surface text-sm truncate max-w-[200px]"><%= entry.title || '(brak tytułu)' %></h3>
+              <p class="text-[10px] text-outline"><%= entry.author_login || '?' %> · <%= new Date(entry.created_at).toLocaleDateString('pl-PL') %></p>
+            </div>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full <%= entry.status === 'active' ? 'bg-tertiary-container text-on-tertiary-container' : entry.status === 'saved' ? 'bg-secondary-container text-on-secondary-container' : 'bg-surface-container-high text-on-surface-variant' %>"><%= entry.status %></span>
+          </div>
+          <p class="text-on-surface-variant text-xs line-clamp-2 mb-3"><%= entry.body %></p>
+          <div class="flex items-center justify-end gap-1 border-t border-surface-container pt-2">
+            <a href="/admin/entries/<%= entry.id %>/edit" class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">edit</span>
+            </a>
+            <form method="post" action="/admin/entries/<%= entry.id %>/delete" class="inline" onsubmit="return confirm('Usunąć wpis?')">
+              <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+              <button type="submit" class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+                <span class="material-symbols-outlined text-lg">delete_outline</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</main>
+
+<%- include('../../partials/navigation-admin') %>
+</body>
+</html>

@@ -1,9 +1,57 @@
 <!doctype html>
 <html lang="pl">
-  <head><meta charset="UTF-8" /><title><%= pageTitle %></title></head>
-  <body>
-    <h1>Moje wpisy (placeholder)</h1>
-    <a href="/entries/new">Dodaj wpis</a>
-  </body>
-</html>
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'Moje wpisy', showAuth: false }) %>
 
+<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+  <%
+    const flash = req.session.flash || {};
+    if (req.session.flash) req.session.flash = null;
+  %>
+  <% if (flash.success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10 mb-6">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= flash.success %></p>
+    </div>
+  <% } %>
+
+  <% if (!entries || entries.length === 0) { %>
+    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8">
+      <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+        <span class="material-symbols-outlined text-outline-variant text-4xl">edit_note</span>
+      </div>
+      <p class="font-headline font-bold text-on-surface text-lg mb-2">Brak wpisów</p>
+      <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Nie masz jeszcze żadnych wpisów. Zacznij pisać, aby śledzić swoje myśli.</p>
+      <a href="/entries/new" class="px-8 py-3 signature-gradient text-on-primary font-headline font-bold rounded-full active:scale-95 duration-150 shadow-md">
+        Stwórz pierwszy wpis
+      </a>
+    </div>
+  <% } else { %>
+    <div class="space-y-3">
+      <% entries.forEach(function(entry) { %>
+        <a href="/entries/<%= entry.id %>/edit" class="block bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors">
+          <div class="flex items-start justify-between">
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline font-bold text-on-surface mb-1 truncate"><%= entry.title %></h3>
+              <p class="text-sm text-on-surface-variant line-clamp-2"><%= entry.body %></p>
+            </div>
+            <span class="material-symbols-outlined text-outline/30 ml-3 shrink-0">chevron_right</span>
+          </div>
+          <div class="flex items-center gap-3 mt-3">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-container-low text-outline font-medium"><%= entry.status %></span>
+            <span class="text-[10px] text-outline"><%= new Date(entry.created_at).toLocaleDateString('pl-PL') %></span>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+  <% } %>
+</main>
+
+<a href="/entries/new" class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 hover:shadow-primary/20 z-40">
+  <span class="material-symbols-outlined text-3xl">add</span>
+</a>
+
+<%- include('../../partials/navigation-user') %>
+</body>
+</html>

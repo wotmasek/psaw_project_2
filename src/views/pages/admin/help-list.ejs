@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pl">
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'Sekcje pomocy', showAuth: false }) %>
+
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto space-y-6">
+  <% if (success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= success %></p>
+    </div>
+  <% } %>
+
+  <% if (!sections || sections.length === 0) { %>
+    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8">
+      <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+        <span class="material-symbols-outlined text-outline-variant text-4xl">line_end</span>
+      </div>
+      <p class="font-headline font-bold text-on-surface text-lg mb-2">Brak sekcji pomocy</p>
+      <p class="text-on-surface-variant text-sm mb-8">Dodaj pierwszą sekcję, aby pojawiła się na publicznej stronie pomocy.</p>
+    </div>
+  <% } else { %>
+    <div class="space-y-3">
+      <% sections.forEach(function(sec) { %>
+        <div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 <%= sec.status === 'published' ? 'border-primary' : 'border-secondary' %>">
+          <div class="flex justify-between items-start mb-2">
+            <div>
+              <h3 class="font-bold text-on-surface text-sm"><%= sec.title %></h3>
+              <p class="text-[10px] text-outline"><%= sec.category %> · poz. <%= sec.display_order %></p>
+            </div>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full <%= sec.status === 'published' ? 'bg-tertiary-container text-on-tertiary-container' : 'bg-secondary-container text-on-secondary-container' %>"><%= sec.status %></span>
+          </div>
+          <p class="text-on-surface-variant text-xs line-clamp-2 mb-3"><%= sec.body %></p>
+          <div class="flex items-center justify-end gap-1 border-t border-surface-container pt-2">
+            <a href="/admin/help/<%= sec.id %>/edit" class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">edit</span>
+            </a>
+            <form method="post" action="/admin/help/<%= sec.id %>/delete" class="inline" onsubmit="return confirm('Usunąć sekcję?')">
+              <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+              <button type="submit" class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+                <span class="material-symbols-outlined text-lg">delete_outline</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</main>
+
+<a href="/admin/help/new" class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 z-40">
+  <span class="material-symbols-outlined text-3xl">add</span>
+</a>
+
+<%- include('../../partials/navigation-admin') %>
+</body>
+</html>

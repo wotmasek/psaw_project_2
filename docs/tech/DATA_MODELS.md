@@ -169,11 +169,11 @@ Rekomendowane wartości:
 - Wszystkie zapytania wykonywać parametryzowanie.
 
 ## Zgodność z aktualnym repo
-- istnieje katalog `src/db/migrations/`,
-- istnieje katalog `src/db/seeds/`,
-- istnieją skrypty `scripts/db/migrate.js`, `scripts/db/seed.js`, `scripts/db/reset.js`,
-- plik `src/db/migrations/0001_init_schema.sql` jest jeszcze placeholderem,
-- plik `src/db/seeds/0001_seed_dev.sql` jest jeszcze placeholderem.
+- migracja `0001_init_schema.sql` tworzy tabele: users, entries, inspirations, anonymous_messages, help_sections,
+- migracja `0002_auth_profile_reset.sql` dodaje do users: email, first_name, last_name oraz tabelę password_reset_tokens,
+- seed `0001_seed_dev.sql` zawiera konto admin, user, inspiracje, wiadomości, pomoc, wpisy,
+- skrypty `scripts/db/migrate.js` uruchamiają wszystkie migracje SQL w kolejności,
+- repozytoria: users, entries, inspirations, anonymous-messages, help-sections, password-reset — działające SQL.
 
 ## Seed danych
 Seed ma zapewnić:

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pl">
+<%- include('../../partials/head') %>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<%- include('../../partials/header', { showBack: true, headerTitle: 'Ustawienia konta', showAuth: false }) %>
+
+<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+  <% if (success) { %>
+    <div class="flex items-start gap-2 bg-tertiary-container/30 p-3 rounded-lg border border-primary/10 mb-6">
+      <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+      <p class="text-xs text-on-primary-container font-medium"><%= success %></p>
+    </div>
+  <% } %>
+
+  <% if (errors && errors.length) { %>
+    <div class="flex items-start gap-2 bg-error-container/10 p-3 rounded-lg border border-error/10 mb-6">
+      <span class="material-symbols-outlined text-error text-sm mt-0.5">error</span>
+      <div>
+        <% errors.forEach(function(err) { %>
+          <p class="text-xs text-error font-medium"><%= err %></p>
+        <% }); %>
+      </div>
+    </div>
+  <% } %>
+
+  <!-- Profile section -->
+  <section class="mb-8">
+    <h2 class="font-headline text-lg font-bold text-on-surface mb-4">Profil</h2>
+    <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_16px_rgba(0,55,73,0.03)] border border-outline-variant/10">
+      <form method="post" action="/settings/profile" class="space-y-4">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="firstName">Imię</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="firstName" name="firstName" type="text" value="<%= user.first_name || '' %>" placeholder="Twoje imię" />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="lastName">Nazwisko</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="lastName" name="lastName" type="text" value="<%= user.last_name || '' %>" placeholder="Twoje nazwisko" />
+        </div>
+
+        <button class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all" type="submit">
+          Zapisz profil
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Email section -->
+  <section class="mb-8">
+    <h2 class="font-headline text-lg font-bold text-on-surface mb-4">Adres e-mail</h2>
+    <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_16px_rgba(0,55,73,0.03)] border border-outline-variant/10">
+      <form method="post" action="/settings/email" class="space-y-4">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="email">E-mail</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="email" name="email" type="email" value="<%= user.email || '' %>" placeholder="jan@example.pl" />
+        </div>
+
+        <p class="text-xs text-on-surface-variant ml-1">E-mail jest potrzebny do odzyskania hasła.</p>
+
+        <button class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all" type="submit">
+          Zmień e-mail
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Password section -->
+  <section class="mb-8">
+    <h2 class="font-headline text-lg font-bold text-on-surface mb-4">Zmiana hasła</h2>
+    <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_16px_rgba(0,55,73,0.03)] border border-outline-variant/10">
+      <form method="post" action="/settings/password" class="space-y-4">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="currentPassword">Aktualne hasło</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="currentPassword" name="currentPassword" type="password" placeholder="••••••••" />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="newPassword">Nowe hasło</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="newPassword" name="newPassword" type="password" placeholder="min. 6 znaków" />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-sm font-semibold text-on-surface-variant ml-1" for="newPasswordConfirmation">Potwierdź nowe hasło</label>
+          <input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline/50" id="newPasswordConfirmation" name="newPasswordConfirmation" type="password" placeholder="••••••••" />
+        </div>
+
+        <button class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all" type="submit">
+          Zmień hasło
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Account info -->
+  <section class="mb-8">
+    <div class="bg-surface-container-low rounded-xl p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-outline-variant">person</span>
+        <div>
+          <p class="text-sm font-semibold text-on-surface"><%= user.login %></p>
+          <p class="text-xs text-on-surface-variant">Twój login</p>
+        </div>
+      </div>
+      <p class="text-xs text-outline">Konto utworzone: <%= new Date(user.created_at).toLocaleDateString('pl-PL') %></p>
+    </div>
+  </section>
+
+  <!-- Logout -->
+  <section>
+    <form method="post" action="/logout">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken || '' %>" />
+      <button class="w-full py-3 text-error font-semibold rounded-lg border border-error/20 hover:bg-error-container/10 active:scale-95 transition-all" type="submit">
+        Wyloguj się
+      </button>
+    </form>
+  </section>
+</main>
+
+<%- include('../../partials/navigation-user') %>
+</body>
+</html>
