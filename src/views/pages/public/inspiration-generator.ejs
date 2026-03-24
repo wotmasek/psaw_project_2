@@ -4,7 +4,7 @@
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 <%- include('../../partials/header', { headerTitle: 'dlaczegozyc.pl' }) %>
 
-<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+<main class="flex-1 pt-24 pb-32 lg:pb-12 px-6 max-w-md lg:max-w-2xl mx-auto w-full">
   <header class="mb-10 text-left">
     <h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-3">Twoja Chwila</h2>
     <p class="text-on-surface-variant leading-relaxed opacity-80">Odpowiedz na kilka pytań, abyśmy mogli przygotować dla Ciebie coś, co przyniesie spokój i inspirację.</p>
@@ -32,7 +32,7 @@
   <form method="POST" action="/inspirations/generator" class="space-y-10">
     <section class="space-y-4">
       <label class="block font-headline text-lg font-bold text-on-surface">Jak się dziś czujesz?</label>
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <button type="submit" name="mood" value="calm" class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary-container transition-all active:scale-95 duration-150">
           <span class="material-symbols-outlined text-primary mb-2">sentiment_satisfied</span>
           <span class="font-label text-sm font-medium">Spokojnie</span>

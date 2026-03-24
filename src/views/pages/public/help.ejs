@@ -4,20 +4,20 @@
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 <%- include('../../partials/header', { headerTitle: 'Centrum Pomocy' }) %>
 
-<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
-  <section class="mb-10">
-    <div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-xl shadow-[0_12px_32px_rgba(0,55,73,0.06)] text-on-primary">
+<main class="flex-1 pt-24 pb-32 lg:pb-12 px-6 max-w-md lg:max-w-4xl mx-auto w-full">
+  <section class="mb-10 lg:max-w-2xl">
+    <div class="bg-gradient-to-br from-primary to-primary-container p-6 lg:p-8 rounded-xl shadow-[0_12px_32px_rgba(0,55,73,0.06)] text-on-primary">
       <div class="flex items-center gap-3 mb-4">
         <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
-        <h2 class="text-xl font-headline font-bold">Potrzebujesz pilnej pomocy?</h2>
+        <h2 class="text-xl lg:text-2xl font-headline font-bold">Potrzebujesz pilnej pomocy?</h2>
       </div>
       <p class="text-on-primary/90 mb-6 leading-relaxed font-body">Jeśli Ty lub ktoś bliski znajduje się w bezpośrednim niebezpieczeństwie, zadzwoń pod numer alarmowy.</p>
-      <div class="space-y-3">
-        <a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors" href="tel:112">
+      <div class="space-y-3 lg:flex lg:space-y-0 lg:gap-4">
+        <a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors lg:flex-1" href="tel:112">
           <span>Numer alarmowy: 112</span>
           <span class="material-symbols-outlined">call</span>
         </a>
-        <a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors" href="tel:116123">
+        <a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors lg:flex-1" href="tel:116123">
           <span>Kryzysowy: 116 123</span>
           <span class="material-symbols-outlined">support_agent</span>
         </a>
@@ -39,29 +39,31 @@
         const categoryColors = { telefony: 'bg-surface-container text-primary', osrodki: 'bg-tertiary-container text-tertiary', edukacja: 'bg-surface-container-high text-on-surface-variant' };
       %>
 
-      <% Object.keys(grouped).forEach(function(cat) { %>
-        <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/20">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="<%= categoryColors[cat] || 'bg-surface-container text-primary' %> p-3 rounded-lg">
-              <span class="material-symbols-outlined"><%= categoryIcons[cat] || 'help' %></span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <% Object.keys(grouped).forEach(function(cat) { %>
+          <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/20">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="<%= categoryColors[cat] || 'bg-surface-container text-primary' %> p-3 rounded-lg">
+                <span class="material-symbols-outlined"><%= categoryIcons[cat] || 'help' %></span>
+              </div>
+              <div>
+                <h4 class="font-headline font-bold text-on-surface"><%= grouped[cat][0].title %></h4>
+                <p class="text-sm text-on-surface-variant font-body"><%= grouped[cat][0].body %></p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-headline font-bold text-on-surface"><%= grouped[cat][0].title %></h4>
-              <p class="text-sm text-on-surface-variant font-body"><%= grouped[cat][0].body %></p>
-            </div>
+            <% if (grouped[cat].length > 1) { %>
+              <ul class="space-y-4">
+                <% grouped[cat].slice(1).forEach(function(item) { %>
+                  <li class="pl-4 border-l-2 border-primary-container">
+                    <p class="font-bold text-sm"><%= item.title %></p>
+                    <p class="text-sm text-outline"><%= item.body %></p>
+                  </li>
+                <% }); %>
+              </ul>
+            <% } %>
           </div>
-          <% if (grouped[cat].length > 1) { %>
-            <ul class="space-y-4">
-              <% grouped[cat].slice(1).forEach(function(item) { %>
-                <li class="pl-4 border-l-2 border-primary-container">
-                  <p class="font-bold text-sm"><%= item.title %></p>
-                  <p class="text-sm text-outline"><%= item.body %></p>
-                </li>
-              <% }); %>
-            </ul>
-          <% } %>
-        </div>
-      <% }); %>
+        <% }); %>
+      </div>
     </section>
   <% } else { %>
     <%- include('../../partials/empty-state', { emptyIcon: 'help', emptyTitle: 'Sekcja pomocy', emptyMessage: 'Informacje pomocowe pojawią się wkrótce.' }) %>

@@ -4,17 +4,17 @@
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 <%- include('../../partials/header', { headerTitle: 'dlaczegozyc.pl' }) %>
 
-<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+<main class="flex-1 pt-24 pb-32 lg:pb-12 px-6 max-w-md lg:max-w-4xl mx-auto w-full">
   <section class="mb-8">
     <h2 class="font-headline font-extrabold text-3xl text-on-surface tracking-tight mb-2">Inspiracje</h2>
     <p class="text-on-surface-variant leading-relaxed text-sm">Codzienna porcja światła dla Twojego umysłu.</p>
   </section>
 
   <% if (locals.inspirations && inspirations.length > 0) { %>
-    <div class="space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <% inspirations.forEach(function(item, idx) { %>
         <a href="/inspirations/<%= item.id %>" class="block">
-          <article class="<%= idx % 2 === 0 ? 'bg-surface-container-lowest shadow-[0_12px_32px_rgba(0,55,73,0.06)]' : 'bg-surface-container-low' %> rounded-3xl p-6 relative overflow-hidden group">
+          <article class="<%= idx % 2 === 0 ? 'bg-surface-container-lowest shadow-[0_12px_32px_rgba(0,55,73,0.06)]' : 'bg-surface-container-low' %> rounded-3xl p-6 relative overflow-hidden group h-full">
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-2xl <%= idx % 2 === 0 ? 'bg-surface-container text-primary' : 'bg-surface-container-lowest text-tertiary' %> flex items-center justify-center shrink-0">
                 <% if (item.emoji) { %>
@@ -33,7 +33,7 @@
       <% }); %>
     </div>
 
-    <div class="mt-12 mb-8">
+    <div class="mt-12 mb-8 lg:max-w-md lg:mx-auto">
       <a href="/inspirations/generator" class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-2xl flex items-center justify-center gap-3 shadow-[0_8px_24px_rgba(27,109,36,0.2)] active:scale-95 transition-transform duration-150">
         <span class="material-symbols-outlined">refresh</span>
         <span>Generuj nową inspirację</span>

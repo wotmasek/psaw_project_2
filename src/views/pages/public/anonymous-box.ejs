@@ -4,7 +4,7 @@
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 <%- include('../../partials/header', { headerTitle: 'dlaczegozyc.pl' }) %>
 
-<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full flex flex-col">
+<main class="flex-1 pt-24 pb-32 lg:pb-12 px-6 max-w-md lg:max-w-2xl mx-auto w-full flex flex-col">
   <section class="mb-10 text-left">
     <h2 class="font-headline text-3xl font-extrabold text-on-surface mb-4 leading-tight">
       Anonimowa przestrzeń
@@ -22,7 +22,7 @@
       <div class="bg-surface-container-lowest rounded-3xl p-1 shadow-sm">
         <textarea
           name="body"
-          class="w-full min-h-[280px] bg-transparent border-none focus:ring-0 text-on-surface text-lg leading-relaxed placeholder:text-outline/40 p-6 font-body resize-none"
+          class="w-full min-h-[280px] lg:min-h-[220px] bg-transparent border-none focus:ring-0 text-on-surface text-lg leading-relaxed placeholder:text-outline/40 p-6 font-body resize-none"
           placeholder="Napisz tutaj o swojej sytuacji..."
           required
           minlength="5"
@@ -38,7 +38,7 @@
       </p>
     </div>
 
-    <div class="mt-auto pt-10">
+    <div class="mt-auto pt-10 lg:pt-4 lg:max-w-sm lg:mx-auto lg:w-full">
       <button type="submit" class="w-full h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg flex items-center justify-center gap-3 shadow-[0_12px_32px_rgba(27,109,36,0.15)] hover:brightness-105 active:scale-95 transition-all duration-300">
         Wyślij wiadomość
         <span class="material-symbols-outlined">send</span>

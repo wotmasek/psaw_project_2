@@ -2,6 +2,32 @@
   const _showBack = locals.showBack !== undefined ? locals.showBack : true;
   const _headerTitle = locals.headerTitle || 'dlaczegozyc.pl';
   const _showAuth = locals.showAuth !== undefined ? locals.showAuth : false;
+  const _activePage = locals.activePage || '';
+
+  let _desktopNavItems = [];
+  if (locals.isAdmin) {
+    _desktopNavItems = [
+      { id: 'admin-dashboard',     icon: 'dashboard',   label: 'Dashboard',  href: '/admin' },
+      { id: 'admin-inspirations',  icon: 'auto_awesome',label: 'Inspiracje', href: '/admin/inspirations' },
+      { id: 'admin-messages',      icon: 'mail',        label: 'Skrzynka',   href: '/admin/messages' },
+      { id: 'admin-entries',       icon: 'edit_note',   label: 'Wpisy',      href: '/admin/entries' },
+      { id: 'admin-help',          icon: 'line_end',    label: 'Pomoc',      href: '/admin/help' },
+    ];
+  } else if (locals.isAuthenticated) {
+    _desktopNavItems = [
+      { id: 'dashboard',    icon: 'home',         label: 'Home',        href: '/dashboard' },
+      { id: 'my-entries',   icon: 'edit_note',    label: 'Wpisy',       href: '/my-entries' },
+      { id: 'inspirations', icon: 'auto_awesome', label: 'Inspiracje',  href: '/inspirations' },
+      { id: 'settings',     icon: 'settings',     label: 'Ustawienia',  href: '/settings' },
+    ];
+  } else {
+    _desktopNavItems = [
+      { id: 'home',           icon: 'home',         label: 'Home',       href: '/' },
+      { id: 'inspirations',   icon: 'auto_awesome', label: 'Inspiracje', href: '/inspirations' },
+      { id: 'anonymous-box',  icon: 'inventory_2',  label: 'Skrzynka',   href: '/anonymous-box' },
+      { id: 'help',           icon: 'line_end',     label: 'Pomoc',      href: '/help' },
+    ];
+  }
 %>
 <header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-surface backdrop-blur-md">
   <div class="flex items-center gap-3">
@@ -12,16 +38,36 @@
     <% } %>
     <span class="text-on-surface font-extrabold tracking-tighter font-headline text-lg"><%= _headerTitle %></span>
   </div>
-  <% if (locals.isAuthenticated) { %>
-    <a href="/dashboard" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
-      <span class="material-symbols-outlined text-xl">account_circle</span>
-      <span class="text-sm font-semibold hidden sm:inline"><%= locals.currentUser.login %></span>
-    </a>
-  <% } else if (_showAuth) { %>
-    <nav class="flex items-center gap-4">
-      <a class="text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors" href="/login">Zaloguj</a>
-      <a class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-sm font-bold shadow-sm hover:opacity-90 transition-opacity" href="/register">Dołącz</a>
-    </nav>
-  <% } %>
+
+  <nav class="hidden lg:flex items-center gap-0.5 absolute left-1/2 -translate-x-1/2">
+    <% _desktopNavItems.forEach(function(item) { %>
+      <% if (_activePage === item.id) { %>
+        <a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-primary-container/40 text-primary transition-colors duration-200" href="<%= item.href %>">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;"><%= item.icon %></span>
+          <span><%= item.label %></span>
+        </a>
+      <% } else { %>
+        <a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors duration-200" href="<%= item.href %>">
+          <span class="material-symbols-outlined text-[18px]"><%= item.icon %></span>
+          <span><%= item.label %></span>
+        </a>
+      <% } %>
+    <% }); %>
+  </nav>
+
+  <div class="flex items-center gap-4">
+    <% if (locals.isAuthenticated) { %>
+      <a href="/dashboard" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-xl">account_circle</span>
+        <span class="text-sm font-semibold hidden sm:inline"><%= locals.currentUser.login %></span>
+      </a>
+    <% } else if (_showAuth) { %>
+      <nav class="flex items-center gap-4">
+        <a class="text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors" href="/login">Zaloguj</a>
+        <a class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-sm font-bold shadow-sm hover:opacity-90 transition-opacity" href="/register">Dołącz</a>
+      </nav>
+    <% } %>
+  </div>
+
   <div class="absolute bottom-0 left-0 bg-surface-container-low h-[1px] w-full"></div>
 </header>

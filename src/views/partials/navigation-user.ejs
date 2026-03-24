@@ -7,7 +7,7 @@
     { id: 'settings', icon: 'settings', label: 'Ustawienia', href: '/settings' },
   ];
 %>
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
   <% _navItems.forEach(function(item) { %>
     <% if (_activePage === item.id) { %>
       <a class="flex flex-col items-center justify-center bg-gradient-to-br from-primary to-primary-container text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="<%= item.href %>">

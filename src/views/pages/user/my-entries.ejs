@@ -4,7 +4,7 @@
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 <%- include('../../partials/header', { showBack: true, headerTitle: 'Moje wpisy', showAuth: false }) %>
 
-<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+<main class="flex-1 pt-24 pb-32 lg:pb-12 px-6 max-w-md lg:max-w-4xl mx-auto w-full">
   <%
     const flash = req.session.flash || {};
     if (req.session.flash) req.session.flash = null;
@@ -17,7 +17,7 @@
   <% } %>
 
   <% if (!entries || entries.length === 0) { %>
-    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8">
+    <div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center mt-8 lg:max-w-lg lg:mx-auto">
       <div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
         <span class="material-symbols-outlined text-outline-variant text-4xl">edit_note</span>
       </div>
@@ -28,7 +28,7 @@
       </a>
     </div>
   <% } else { %>
-    <div class="space-y-3">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
       <% entries.forEach(function(entry) { %>
         <a href="/entries/<%= entry.id %>/edit" class="block bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors">
           <div class="flex items-start justify-between">
@@ -48,7 +48,7 @@
   <% } %>
 </main>
 
-<a href="/entries/new" class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 hover:shadow-primary/20 z-40">
+<a href="/entries/new" class="fixed bottom-24 lg:bottom-8 right-6 lg:right-8 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 hover:shadow-primary/20 z-40">
   <span class="material-symbols-outlined text-3xl">add</span>
 </a>
 

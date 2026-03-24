@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="pl">
 <%- include('../../partials/head') %>
-<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32">
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen pb-32 lg:pb-12">
 <%- include('../../partials/header', { showBack: false, headerTitle: 'dlaczegozyc.pl', showAuth: false }) %>
 
-<main class="pt-24 px-6 space-y-8 max-w-md mx-auto">
+<main class="pt-24 px-6 space-y-8 max-w-md lg:max-w-4xl mx-auto">
   <header class="space-y-1">
     <p class="text-sm font-semibold text-primary uppercase tracking-wider">Panel Administratora</p>
-    <h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">Witaj, Administratorze</h2>
+    <h2 class="text-3xl lg:text-4xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">Witaj, Administratorze</h2>
   </header>
 
-  <section class="grid grid-cols-2 gap-4">
-    <div class="col-span-2 bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between shadow-sm">
+  <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="col-span-2 lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between shadow-sm">
       <div class="flex items-center justify-between mb-4">
         <span class="material-symbols-outlined text-primary p-2 bg-primary-container/30 rounded-lg">mail</span>
         <% if (msgCounts.new > 0) { %>
@@ -37,7 +37,7 @@
 
   <section class="space-y-4">
     <h3 class="text-lg font-headline font-bold text-on-surface">Zarządzanie</h3>
-    <div class="grid grid-cols-1 gap-3">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
       <a href="/admin/inspirations" class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors group">
         <div class="flex items-center gap-4">
           <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
