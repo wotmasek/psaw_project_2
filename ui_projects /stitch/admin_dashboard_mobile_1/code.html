@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel Administratora - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c] cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4e8198] dark:text-slate-400" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional man in business casual attire with a friendly, neutral expression, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiwnwqLJ6xlggSuzxqGBCBvt08AyRjFgOnFMaWdg1W-A5dha9iC3kA5wqdbLtWR4AiJAe7M9jzSK1_-ajJyK8Y9FNFoKqX7jRe-4GzLd--ZWrsa65TNQmDovzuUq_veGj2mb01PwLCh7wS-u6BD9vbF8wDXLWuSwVpw7sb_ghfaLxAJwxVdYfsa6gun6IqhEmKKoh3e8MNgKUzHV0mjWHOmfNTYem2cEMkIJZ_kQszLec68XvG2Fqrq5OwUt70F04KPAUjitb0RA8"/>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 space-y-8 max-w-md mx-auto">
+<!-- Welcome Section -->
+<header class="space-y-1">
+<p class="text-sm font-semibold text-primary uppercase tracking-wider">Panel Administratora</p>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">Witaj ponownie, <br/>Administratorze</h2>
+</header>
+<!-- Summary Grid (Bento Style Lite) -->
+<section class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between shadow-[0_-12px_32px_rgba(0,55,73,0.06)]">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary p-2 bg-primary-container/30 rounded-lg" data-icon="mail">mail</span>
+<span class="text-xs font-bold text-primary bg-primary-container px-2 py-1 rounded-full">+12 nowych</span>
+</div>
+<div>
+<p class="text-sm text-on-surface-variant">Anonimowe wiadomości</p>
+<p class="text-3xl font-headline font-bold text-on-surface">128</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="trending_up">trending_up</span>
+<p class="text-xs text-on-surface-variant">Aktywność</p>
+<p class="text-xl font-headline font-bold">84%</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="group">group</span>
+<p class="text-xs text-on-surface-variant">Użytkownicy</p>
+<p class="text-xl font-headline font-bold">1.2k</p>
+</div>
+</section>
+<!-- Quick Shortcuts -->
+<section class="space-y-4">
+<h3 class="text-lg font-headline font-bold text-on-surface">Skróty zarządania</h3>
+<div class="grid grid-cols-1 gap-3">
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+</div>
+<span class="font-semibold text-on-surface">Zarządzaj wpisami</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="font-semibold text-on-surface">Inspiracje</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="person_search">person_search</span>
+</div>
+<span class="font-semibold text-on-surface">Użytkownicy</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-outline-variant/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="lifeline">line_end</span>
+</div>
+<span class="font-semibold text-on-surface">Pomoc</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Recent Activity Feed (Minimalist List) -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-headline font-bold text-on-surface">Ostatnie działania</h3>
+<span class="text-xs font-semibold text-primary cursor-pointer">Zobacz wszystko</span>
+</div>
+<div class="space-y-1">
+<div class="p-4 bg-surface rounded-xl flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">Nowy wpis oczekuje na moderację</p>
+<p class="text-xs text-on-surface-variant">2 minuty temu • Temat: Nadzieja</p>
+</div>
+</div>
+<div class="p-4 bg-surface rounded-xl flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-outline-variant shrink-0"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">Zaktualizowano bazę kontaktów pomocy</p>
+<p class="text-xs text-on-surface-variant">15 minut temu • Przez: Admin_2</p>
+</div>
+</div>
+<div class="p-4 bg-surface rounded-xl flex items-start gap-4">
+<div class="mt-1 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+<div>
+<p class="text-sm font-medium text-on-surface">Zgłoszono komentarz do weryfikacji</p>
+<p class="text-xs text-on-surface-variant">1 godzina temu • ID: #9821</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Suppressed on main view unless toggled, but here for reference as a shell part) -->
+<!-- We focus on BottomNavBar for Mobile Navigation as per instructions -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_32px_rgba(0,55,73,0.06)] border-t border-[#86b9d2]/20">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Wpisy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Statystyki</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Settings</span>
+</a>
+</nav>
+</body></html>

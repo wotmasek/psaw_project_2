@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edycja Wpisu | Panel Administratora</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="text-[#1b6d24] dark:text-[#a3f69c] Active: scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#1b6d24] dark:text-[#a3f69c]">Edytuj treść</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold px-2 py-1 rounded bg-surface-container-high text-on-surface-variant uppercase tracking-wider">ID: 8842</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 px-4 max-w-2xl mx-auto space-y-8">
+<!-- Status & Visibility Section (Administrative) -->
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-outline px-1">Status i Widoczność</h2>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-on-surface">Status publikacji</p>
+<p class="text-sm text-on-surface-variant">Widoczność wpisu dla użytkowników</p>
+</div>
+<select class="bg-surface-container-low border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary text-on-surface py-2 pl-3 pr-8">
+<option value="published">Opublikowany</option>
+<option value="draft">Szkic</option>
+<option value="pending">Oczekiwanie</option>
+<option value="archived">Zarchiwizowany</option>
+</select>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-on-surface">Priorytet treści</p>
+<p class="text-sm text-on-surface-variant">Pozycja w algorytmie</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-4 py-1.5 text-xs font-bold rounded-md bg-white shadow-sm text-primary">Normal</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-md text-on-surface-variant">High</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Form -->
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-outline px-1">Treść Wpisu</h2>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface" for="title">Tytuł artykułu / wiadomości</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-outline-variant" id="title" type="text" value="10 sposobów na odnalezienie spokoju w codzienności"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface" for="category">Kategoria</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary" id="category">
+<option>Inspiracja</option>
+<option>Zdrowie psychiczne</option>
+<option>Relacje</option>
+<option>Praca</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface" for="content">Główna treść</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary leading-relaxed" id="content" rows="8">Praktykowanie wdzięczności jest jednym z najprostszych, a zarazem najskuteczniejszych sposobów na poprawę dobrostanu psychicznego. Codzienne zapisywanie trzech rzeczy, za które jesteśmy wdzięczni, pomaga zmienić perspektywę i skupić się na pozytywnych aspektach życia, nawet w trudnych chwilach...</textarea>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface">Miniatura wpisu</label>
+<div class="relative rounded-xl overflow-hidden aspect-video bg-surface-container">
+<img alt="Spokojny poranek" class="w-full h-full object-cover opacity-80" data-alt="A serene morning landscape with soft sunlight filtering through misty trees and a calm lake reflecting the sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXukoRhLbmrTKXBt1KG7DPCrx6DJ3nEl4ZggkwKSllA6b_HpIiqzYmzz0tcPUvA0V-vYbGeVnJvGnpIVNXQLiUkWi_Pt9IP13mnV_44gNYhQpgoaCHetCO15eR13o21DPvLp6hPVTnSNJslAHOW4p22ymBJHphmIqM8zAVfIhSeNOPUAlEX381jzJhhCOgztQoa6eRAcfu1PdI-y-6UYw3fDrXqyzaWE_0QE4G8yaekOhD6TctLS9S9GGvGM4udw-u0EtHjHUefm8"/>
+<button class="absolute inset-0 m-auto w-fit h-fit bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-on-surface flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> Zmień obraz
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Moderation Notes -->
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-outline px-1">Logi i Notatki</h2>
+<div class="bg-surface-container-low p-5 rounded-xl space-y-4">
+<div class="flex gap-3">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-primary-container" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Ostatnia edycja: Anna Nowak</p>
+<p class="text-xs text-on-surface-variant">24 Października 2023, 14:20</p>
+<p class="text-sm mt-2 italic text-on-surface-variant">"Poprawiono błędy ortograficzne w drugim akapicie i zaktualizowano kategorię."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl text-error font-bold bg-error-container/10 border border-error/20 hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+                Usuń ten wpis trwale
+            </button>
+</section>
+</main>
+<!-- Bottom Actions Container (Mobile Sticky) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 px-6 py-6 flex gap-4">
+<button class="flex-1 py-3 px-6 rounded-2xl bg-surface-container-highest text-on-surface-variant font-bold text-sm transition-all Active:scale-95 duration-150">
+            Anuluj
+        </button>
+<button class="flex-[2] py-3 px-6 rounded-2xl bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all Active:scale-95 duration-150">
+            Zapisz zmiany
+        </button>
+</div>
+<!-- Hidden Drawer for Admin Selection (Represented as NavigationDrawer in logic) -->
+<nav class="hidden">
+<!-- Not rendered as per Task-Focused/Transactional suppression rule, but structural keys are respected in Header/Footer -->
+</nav>
+</body></html>

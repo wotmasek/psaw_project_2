@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nowy wpis - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#d9e6da",
+                        "secondary-fixed": "#d6e5ef",
+                        "on-background": "#003749",
+                        "primary-fixed": "#a3f69c",
+                        "inverse-primary": "#9df197",
+                        "tertiary-fixed": "#e7f4e8",
+                        "outline": "#4e8198",
+                        "on-secondary-fixed-variant": "#4f5d67",
+                        "inverse-surface": "#011017",
+                        "primary-fixed-dim": "#95e88f",
+                        "error-dim": "#5c1202",
+                        "surface-tint": "#1b6d24",
+                        "on-tertiary-container": "#515d54",
+                        "on-error": "#fff7f6",
+                        "on-surface": "#003749",
+                        "primary-container": "#a3f69c",
+                        "on-tertiary-fixed": "#3f4b42",
+                        "surface-container": "#d9f2ff",
+                        "on-primary-container": "#065f18",
+                        "surface-container-highest": "#bde9ff",
+                        "background": "#f4faff",
+                        "surface-container-low": "#e7f6ff",
+                        "tertiary-container": "#e7f4e8",
+                        "secondary-dim": "#47555e",
+                        "surface": "#f4faff",
+                        "tertiary-dim": "#4a564d",
+                        "on-tertiary-fixed-variant": "#5b675e",
+                        "secondary": "#53616a",
+                        "surface-bright": "#f4faff",
+                        "tertiary": "#566259",
+                        "surface-dim": "#a7e2ff",
+                        "on-error-container": "#742410",
+                        "inverse-on-surface": "#8f9fa9",
+                        "primary-dim": "#076019",
+                        "on-secondary": "#f4faff",
+                        "on-secondary-fixed": "#33414a",
+                        "on-tertiary": "#effcf0",
+                        "error-container": "#fe8b70",
+                        "on-secondary-container": "#46545d",
+                        "surface-variant": "#bde9ff",
+                        "on-primary-fixed-variant": "#176a21",
+                        "secondary-fixed-dim": "#c8d6e1",
+                        "on-primary-fixed": "#004b0f",
+                        "on-primary": "#e5ffdd",
+                        "secondary-container": "#d6e5ef",
+                        "outline-variant": "#86b9d2",
+                        "primary": "#1b6d24",
+                        "error": "#9e422c",
+                        "on-surface-variant": "#30657b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#cbedff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4faff;
+            color: #003749;
+        }
+        .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#d9f2ff] transition-colors text-[#1b6d24]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#1b6d24]">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4e8198]" data-icon="more_vert">more_vert</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full self-end"></div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Header Section -->
+<section class="mb-10">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-3">Chwila dla Ciebie</h2>
+<p class="text-on-surface-variant text-body-lg leading-relaxed">Każda myśl ma znaczenie. Nie spiesz się, to Twój bezpieczny azyl.</p>
+</section>
+<!-- Form Section -->
+<form class="space-y-8">
+<!-- Field: Title -->
+<div class="space-y-3">
+<label class="font-headline font-bold text-sm tracking-wide text-on-surface uppercase opacity-70" for="entry-title">Krótki tytuł</label>
+<div class="relative group">
+<input class="w-full px-5 py-4 bg-surface-container-low border-none rounded-xl text-on-surface placeholder-on-surface-variant/50 focus:ring-2 focus:ring-primary transition-all outline-none text-lg font-medium" id="entry-title" placeholder="O czym dzisiaj myślisz?" type="text"/>
+</div>
+</div>
+<!-- Field: Thoughts -->
+<div class="space-y-3">
+<label class="font-headline font-bold text-sm tracking-wide text-on-surface uppercase opacity-70" for="entry-content">Twoje przemyślenia</label>
+<div class="relative">
+<textarea class="w-full px-5 py-5 bg-surface-container-low border-none rounded-xl text-on-surface placeholder-on-surface-variant/50 focus:ring-2 focus:ring-primary transition-all outline-none resize-none text-base leading-relaxed" id="entry-content" placeholder="Pisz śmiało, nikt Cię nie ocenia..." rows="10"></textarea>
+</div>
+<p class="text-xs text-on-surface-variant/70 italic px-1">Twoje wpisy są całkowicie prywatne i szyfrowane.</p>
+</div>
+<!-- Visual Break / Soft Element -->
+<div class="flex items-center gap-3 p-4 bg-tertiary-container rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<p class="text-sm text-on-tertiary-container leading-snug">Wskazówka: Opisz jedną małą rzecz, która wywołała dziś uśmiech.</p>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<button class="w-full py-5 px-8 rounded-xl bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-[#e5ffdd] font-headline font-extrabold text-lg shadow-lg shadow-primary/10 active:scale-95 transition-all duration-150" type="submit">
+                    Zapisz wpis
+                </button>
+</div>
+</form>
+<!-- Contextual Support -->
+<div class="mt-12 mb-8 text-center px-4">
+<p class="text-on-surface-variant text-sm font-medium">Potrzebujesz inspiracji?</p>
+<button class="mt-2 text-primary font-bold hover:underline">Zobacz gotowe pytania do autorefleksji</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

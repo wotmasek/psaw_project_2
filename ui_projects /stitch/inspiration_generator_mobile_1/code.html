@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inspiracje - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c]" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#4e8198] dark:text-slate-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full bg-[#e7f6ff] dark:bg-slate-800 h-[1px]"></div>
+</header>
+<!-- Main Content: Inspiration Generator -->
+<main class="flex-1 mt-16 mb-24 px-6 pt-8 max-w-md mx-auto w-full">
+<!-- Introduction Header -->
+<header class="mb-10 text-left">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-3">Twoja Chwila</h2>
+<p class="text-on-surface-variant leading-relaxed opacity-80">Odpowiedz na kilka pytań, abyśmy mogli przygotować dla Ciebie coś, co przyniesie spokój i inspirację.</p>
+</header>
+<!-- Questionnaire Form -->
+<div class="space-y-10">
+<!-- Question 1: Emotions -->
+<section class="space-y-4">
+<label class="block font-headline text-lg font-bold text-on-surface">Jak się dziś czujesz?</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary-container transition-all group active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+<span class="font-label text-sm font-medium">Spokojnie</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary-container transition-all group active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="sentiment_dissatisfied">sentiment_dissatisfied</span>
+<span class="font-label text-sm font-medium">Trudno</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary-container transition-all group active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="bolt">bolt</span>
+<span class="font-label text-sm font-medium">Energicznie</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary-container transition-all group active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="bedtime">bedtime</span>
+<span class="font-label text-sm font-medium">Zmęczenie</span>
+</button>
+</div>
+</section>
+<!-- Question 2: Needs -->
+<section class="space-y-4">
+<label class="block font-headline text-lg font-bold text-on-surface">Czego potrzebujesz?</label>
+<div class="space-y-3">
+<div class="relative">
+<select class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-4 font-label text-on-surface focus:ring-2 focus:ring-primary appearance-none">
+<option>Potrzebuję uspokojenia myśli</option>
+<option>Szukam motywacji do działania</option>
+<option>Chcę poczuć się mniej samotnie</option>
+<option>Potrzebuję nowej perspektywy</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Question 3: Thoughts -->
+<section class="space-y-4">
+<label class="block font-headline text-lg font-bold text-on-surface">O czym myślisz?</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-4 font-label text-on-surface placeholder:text-outline/60 focus:ring-2 focus:ring-primary resize-none" placeholder="Napisz jedno słowo lub zdanie..." rows="3"></textarea>
+</div>
+</section>
+<!-- CTA -->
+<div class="pt-6">
+<button class="w-full bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-on-primary py-5 rounded-xl font-headline font-bold text-lg shadow-[0_12_32px_rgba(27,109,36,0.2)] active:scale-[0.98] transition-all">
+                    Generuj inspirację
+                </button>
+<p class="text-center text-outline text-xs mt-4">Twoje odpowiedzi są prywatne i bezpieczne.</p>
+</div>
+</div>
+<!-- Result Preview Section (Subtle Hint) -->
+<div class="mt-16 pb-12">
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-start gap-4 shadow-sm">
+<div class="p-3 bg-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface mb-1">Ostatnia inspiracja</h3>
+<p class="text-sm italic text-on-surface-variant">"Nawet najdłuższa droga zaczyna się od pierwszego kroku, który właśnie robisz."</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<div class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</div>
+</nav>
+<!-- Background Decorative Elements -->
+<div class="fixed top-20 right-[-10%] w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="fixed bottom-32 left-[-10%] w-80 h-80 bg-surface-container-high/30 rounded-full blur-3xl -z-10"></div>
+</body></html>

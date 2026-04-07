@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Panel - Zarządzanie wpisami</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#d9f2ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c]">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold text-lg tracking-tight text-[#1b6d24] dark:text-[#a3f69c]">Zarządzanie wpisami</h1>
+</div>
+<div class="flex items-center">
+<span class="font-headline font-extrabold tracking-tighter text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-20 pb-28 px-4 max-w-xl mx-auto space-y-4">
+<!-- Search & Filter Area (Instructional Addition for Usability) -->
+<section class="flex flex-col gap-3">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-xl">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary text-on-surface placeholder-outline-variant transition-all duration-200" placeholder="Szukaj użytkownika lub treści..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="whitespace-nowrap bg-primary-container text-on-primary-container px-4 py-2 rounded-full text-sm font-semibold">Wszystkie</button>
+<button class="whitespace-nowrap bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium border border-outline-variant/20 hover:bg-surface-container transition-colors">Oczekujące</button>
+<button class="whitespace-nowrap bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium border border-outline-variant/20 hover:bg-surface-container transition-colors">Zatwierdzone</button>
+<button class="whitespace-nowrap bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium border border-outline-variant/20 hover:bg-surface-container transition-colors">Anonimowe</button>
+</div>
+</section>
+<!-- Entry Card List -->
+<div class="space-y-4">
+<!-- Item 1: Pending Message -->
+<article class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/10 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="font-bold text-sm leading-none">Anna Kowalska</p>
+<p class="text-[11px] text-outline mt-1 font-medium">12 minut temu • ID: #9842</p>
+</div>
+</div>
+<span class="bg-error-container/20 text-error-container text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Oczekujące</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4 line-clamp-3">
+                    Znalazłam spokój w codziennej medytacji, ale wciąż mam trudne wieczory. Czy ktoś zna techniki oddechowe, które naprawdę pomagają przy nagłym ataku lęku? Dziękuję za wsparcie.
+                </p>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary-container/30 text-primary py-2.5 rounded-lg hover:bg-primary-container transition-colors text-sm font-bold">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                        Zatwierdź
+                    </button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-outline hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-error hover:bg-error-container/10 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</article>
+<!-- Item 2: Anonymous Message -->
+<article class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/10 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">visibility_off</span>
+</div>
+<div>
+<p class="font-bold text-sm leading-none italic">Anonimowy Użytkownik</p>
+<p class="text-[11px] text-outline mt-1 font-medium">1 godz. temu • ID: #9840</p>
+</div>
+</div>
+<span class="bg-tertiary-container/40 text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Zatwierdzone</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4 line-clamp-2">
+                    Czuć, że ta społeczność naprawdę słucha. Moja dzisiejsza mała wygrana to spacer do parku po raz pierwszy od tygodnia.
+                </p>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container-low text-on-surface-variant py-2.5 rounded-lg hover:bg-surface-container transition-colors text-sm font-bold">
+<span class="material-symbols-outlined text-lg">sync</span>
+                        Zmień status
+                    </button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-outline hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-error hover:bg-error-container/10 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</article>
+<!-- Item 3: User Entry -->
+<article class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/10 shadow-sm transition-all active:scale-[0.98]">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up of a smiling young man in a denim jacket with soft urban lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkcviXzY5ccc4D8ySJZe4drGjxzTfdkMMKFkQwK6-HUUEWLojHZB1FFpEWa4rmx36UI0N7ofVzF4XNU1FV_4WBuIhKj_KOp1sz6MiM_tifBjnULHKJNQhzaJV0SAdyQWVfiNuIhHnF0_ap8ti9dVIbcFhNOQv_Cxd0WL-yrS_H0oEJTqrbNHhRddhgn2khlFz5lYwnqgrzu2-KWQ9eaZRw76WOQqI5BYuL9TUk_OUvMR41T0kPrFljBU37EoiMNZXQ9ho4Cs34PLo"/>
+</div>
+<div>
+<p class="font-bold text-sm leading-none">Marek Zieliński</p>
+<p class="text-[11px] text-outline mt-1 font-medium">4 godz. temu • ID: #9835</p>
+</div>
+</div>
+<span class="bg-tertiary-container/40 text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Zatwierdzone</span>
+</div>
+<div class="relative w-full h-32 mb-4 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-90" data-alt="vibrant mountain landscape at sunrise with golden light reflection on a calm alpine lake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpctDWbsIPhqRHnOYu5rwmfE7XnFsz5c9xfUUGTYBWLj5pU9khcqQutI8MGecW_hC55c_TUFMfB85IDxWsMIa1BR7h_OdYMgMq-1ToMDmQuQnXLjolx49EcOwzzxNH9p24JPRl-yQ7-YaENgAEoaLscJS6vd4mYjvugbqID3ux-ASSUp_uGPLkRgyoOJvoAaU5fqkc7Gx-9GDMFkp1Bl8CfRd80JtO1UGY5xgy3tkhxlr5jOG7vocUPjS4jlvw5gl0QND6jex7Gk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4 italic">
+                    "Góry zawsze przypominają mi, jak małe są nasze codzienne zmartwienia wobec ogromu natury."
+                </p>
+<div class="flex items-center gap-2 pt-3 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container-low text-on-surface-variant py-2.5 rounded-lg hover:bg-surface-container transition-colors text-sm font-bold">
+<span class="material-symbols-outlined text-lg">sync</span>
+                        Zmień status
+                    </button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-outline hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2.5 rounded-lg border border-outline-variant/20 text-error hover:bg-error-container/10 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 shadow-md" href="#">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+<!-- Drawer Trigger (Floating Action Button style for Admin Context) -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="w-14 h-14 bg-on-background text-white rounded-2xl shadow-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</body></html>

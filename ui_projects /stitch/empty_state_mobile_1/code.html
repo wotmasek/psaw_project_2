@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f4faff;
+            color: #003749;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#d9f2ff] transition-colors text-[#1b6d24] active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749]">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center text-[#4e8198] hover:bg-[#d9f2ff] rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<!-- Main Content: Empty State Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-8 pt-16 pb-32">
+<div class="w-full max-w-md flex flex-col items-center text-center">
+<!-- Hero Illustration Area (Asymmetric & Airy) -->
+<div class="relative mb-12 w-64 h-64 flex items-center justify-center">
+<!-- Abstract Organic Shapes (The "Sanctuary" vibe) -->
+<div class="absolute inset-0 bg-tertiary-container rounded-full opacity-40 blur-3xl scale-110"></div>
+<div class="absolute top-4 left-4 w-48 h-48 bg-primary-container rounded-full opacity-20 blur-2xl"></div>
+<!-- Signature Icon -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-32 h-32 bg-surface-container-lowest rounded-[2rem] flex items-center justify-center shadow-[0_12px_32px_rgba(0,55,73,0.06)] transform -rotate-3 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<!-- Small accent icon -->
+<div class="absolute -bottom-2 -right-2 w-14 h-14 bg-tertiary-fixed-dim rounded-2xl flex items-center justify-center shadow-md transform rotate-12">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="edit_note">edit_note</span>
+</div>
+</div>
+</div>
+<!-- Empty State Message -->
+<h2 class="font-headline font-bold text-3xl text-on-surface mb-4 tracking-tight leading-tight">
+                Nie mamy tu jeszcze żadnych danych.
+            </h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10 max-w-[280px]">
+                Zacznij od pierwszej inspiracji lub dodaj swój wpis.
+            </p>
+<!-- Primary Action -->
+<button class="w-full py-4 px-8 bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-on-primary font-headline font-bold text-lg rounded-xl shadow-[0_8px_20px_rgba(27,109,36,0.15)] hover:from-[#076019] hover:to-[#95e88f] transition-all active:scale-95 duration-200 flex items-center justify-center gap-3 mb-4">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                Dodaj wpis
+            </button>
+<!-- Secondary Action -->
+<button class="w-full py-4 px-8 border border-outline/40 text-outline font-headline font-bold text-lg rounded-xl hover:bg-surface-container-low transition-all active:scale-95 duration-200">
+                Szukaj inspiracji
+            </button>
+</div>
+</main>
+<!-- Contextual "Hopeful" Card (Editorial Element) -->
+<section class="px-6 mb-32">
+<div class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-base mb-1">Wskazówka</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">
+                        Nawet najmniejszy zapisany krok pomaga w budowaniu lepszego jutra. Twój dziennik to Twoja bezpieczna przestrzeń.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl border-t border-[#86b9d2]/20">
+<a class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 shadow-lg transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

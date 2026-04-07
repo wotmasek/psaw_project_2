@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#d9f2ff] transition-colors active:scale-95 duration-150 text-[#1b6d24]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749]">dlaczegozyc.pl</span>
+</div>
+<div class="h-[1px] w-full absolute bottom-0 left-0 bg-[#e7f6ff]"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-8 pt-16 pb-24">
+<!-- Illustration/Iconography Focus Area -->
+<div class="w-full max-w-sm flex flex-col items-center text-center space-y-10">
+<!-- Atmospheric Visual Anchor -->
+<div class="relative w-full aspect-square max-w-[280px]">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container to-surface-container-highest rounded-full blur-3xl opacity-30 animate-pulse"></div>
+<div class="relative w-full h-full bg-surface-container-lowest rounded-[2.5rem] flex items-center justify-center shadow-[0_12px_32px_rgba(0,55,73,0.06)] overflow-hidden">
+<img alt="Abstract representation of security and welcoming light" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="Soft abstract visualization of a glowing door or portal in a misty forest with ethereal green and blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGH4NI9tgGp9KvZYV87c4xhMlGMIbmpVl5a1mIeDCfP13gcVFs8jA_3RHNoHqYIM8Va-4wH8FJBsYDkKiCNNR0PgP9n_NSKH9uo4-WwaG6lRpgQG6O72Jptkk9GPuoSj-xCKTPWsNIxpo1XoGgldNTsSyQ56mugIcNs8vmNiohuuWPiu6_oaCkeHa18cnJsU0HQ_pqohYM9U4fjN0oiEKdx9pEUOzl8Mr2LS3gZV8slo_wTSXVyK1WDPrQ_rHA5UxUQvLZFQfOYig"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface-container-lowest/90 p-6 rounded-3xl backdrop-blur-sm shadow-xl border border-white/20">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Hierarchy -->
+<div class="space-y-4">
+<h1 class="font-headline font-extrabold text-3xl text-on-surface tracking-tight leading-tight">
+                    Witaj w naszej społeczności
+                </h1>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Ta sekcja jest dostępna dla zalogowanych użytkowników. Dołącz do nas, aby zyskać pełny dostęp do wsparcia i inspiracji.
+                </p>
+</div>
+<!-- Action Cluster -->
+<div class="w-full space-y-4 pt-4">
+<button class="w-full py-4 px-8 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-2xl shadow-lg hover:brightness-110 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="login">login</span>
+                    Zaloguj się
+                </button>
+<div class="grid grid-cols-1 gap-3 w-full">
+<button class="w-full py-4 px-8 border-2 border-outline/20 text-on-surface-variant font-semibold rounded-2xl hover:bg-surface-container-low transition-colors flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                        Załóż konto
+                    </button>
+<button class="w-full py-3 px-8 text-outline font-medium rounded-2xl hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="home">home</span>
+                        Powrót do strony głównej
+                    </button>
+</div>
+</div>
+<!-- Trust / Editorial Note -->
+<div class="pt-8 border-t border-outline-variant/10 w-full">
+<p class="text-xs text-outline/60 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+                    Twoja prywatność jest dla nas priorytetem
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on this transactional screen as per Shell Visibility rules) -->
+<!-- Suppressing nav to prioritize focus on auth actions -->
+</body></html>

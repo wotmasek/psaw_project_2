@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 hover:bg-[#d9f2ff] dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c]">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">Moje wpisy</h1>
+</div>
+<div class="style_separation_logic absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Tab Switcher -->
+<div class="flex p-1 bg-surface-container-low rounded-xl mb-8">
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-surface-container-lowest text-primary shadow-sm">Moje wpisy</button>
+<button class="flex-1 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container transition-colors rounded-lg">Inspiracje</button>
+</div>
+<!-- Section Title & Count -->
+<div class="flex items-baseline justify-between mb-6">
+<h2 class="font-headline text-xl font-bold tracking-tight">Ostatnie aktywności</h2>
+<span class="text-xs font-medium text-outline bg-surface-container px-2 py-1 rounded-full">4 wpisy</span>
+</div>
+<!-- Entries List -->
+<div class="space-y-4">
+<!-- Entry Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col gap-4 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-surface-container/30">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] uppercase tracking-wider font-bold text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container border border-tertiary/20"></span>
+                            Refleksja poranna
+                        </div>
+<h3 class="font-headline text-lg font-bold leading-tight text-on-surface">Spokój w lesie kabackim</h3>
+</div>
+<span class="text-[11px] text-outline font-medium">14 Gru</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Dziś poczułem niesamowity spokój spacerując między drzewami. Powietrze było rześkie, a słońce ledwo przebijało się przez chmury...
+                </p>
+<div class="flex gap-2 pt-2 border-t border-surface-container-low">
+<button class="flex-1 py-2.5 text-xs font-bold text-on-primary bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] rounded-lg active:scale-95 transition-all">
+                        Otwórz wpis
+                    </button>
+<button class="px-4 py-2.5 text-xs font-bold text-outline border border-outline/20 rounded-lg hover:bg-surface-container-low transition-colors">
+                        Edytuj
+                    </button>
+</div>
+</div>
+<!-- Entry Card 2 (Photo focus) -->
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col gap-4 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-surface-container/30">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] uppercase tracking-wider font-bold text-primary">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                            Inspiracja
+                        </div>
+<h3 class="font-headline text-lg font-bold leading-tight text-on-surface">Złota godzina</h3>
+</div>
+<span class="text-[11px] text-outline font-medium">12 Gru</span>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="soft warm sunlight filtering through autumn leaves in a peaceful forest setting with golden lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbrM26MhyN5m6bQMhAs7m9kKdqETXJ9wDzd-bBVLrSfv8MLuUUPaFCVIzuAORV4GYLdxhfLEJyPkJS93B4nZMw6NvJhz2hDvQttHkoTZktKIy6-nPfawrMr2ilUoUqchxqiLfWV_b2B9Xxu3C1tS-kJLC_D87eyctuWTc5ML8NwsGye1ZZL5DJq1VmbdHQ-hhRoJ2wSRvjQZen3EGJZY--OFhLyXVLVxZN9jg22Xae3hlwjLbFURCdwbLdz9ohaABKEhHHNw-ltyU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/20 to-transparent"></div>
+</div>
+<div class="flex gap-2 pt-2 border-t border-surface-container-low">
+<button class="flex-1 py-2.5 text-xs font-bold text-on-primary bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] rounded-lg active:scale-95 transition-all">
+                        Zobacz szczegóły
+                    </button>
+<button class="px-4 py-2.5 text-xs font-bold text-outline border border-outline/20 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm leading-none">delete</span>
+</button>
+</div>
+</div>
+<!-- Entry Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col gap-4 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-surface-container/30">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-[10px] uppercase tracking-wider font-bold text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container border border-tertiary/20"></span>
+                            Dziennik wdzięczności
+                        </div>
+<h3 class="font-headline text-lg font-bold leading-tight text-on-surface">Drobne gesty</h3>
+</div>
+<span class="text-[11px] text-outline font-medium">10 Gru</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                    Jestem wdzięczny za ciepłą herbatę i rozmowę z przyjacielem. Czasem to wystarczy, by poczuć się lepiej...
+                </p>
+<div class="flex gap-2 pt-2 border-t border-surface-container-low">
+<button class="flex-1 py-2.5 text-xs font-bold text-on-primary bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] rounded-lg active:scale-95 transition-all">
+                        Otwórz wpis
+                    </button>
+<button class="px-4 py-2.5 text-xs font-bold text-outline border border-outline/20 rounded-lg hover:bg-surface-container-low transition-colors">
+                        Edytuj
+                    </button>
+</div>
+</div>
+<!-- Suggestion Card (Asymmetric Layout) -->
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col gap-3 mt-8 relative overflow-hidden">
+<div class="relative z-10 pr-12">
+<h4 class="font-headline font-bold text-primary mb-1">Chcesz dodać coś nowego?</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Twoje myśli zasługują na bezpieczne miejsce.</p>
+</div>
+<button class="relative z-10 mt-2 w-fit px-6 py-2 bg-on-surface text-surface text-xs font-bold rounded-full shadow-lg active:scale-95 transition-transform">
+                    Nowy wpis
+                </button>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-primary/5 rotate-12 select-none">edit_note</span>
+</div>
+<!-- Empty State Context (Hidden by default, shown for logical flow) -->
+<!-- 
+            <div class="py-20 flex flex-col items-center text-center px-10">
+                <div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-4xl text-outline/40">inventory_2</span>
+                </div>
+                <p class="text-on-surface-variant font-medium">Nie masz jeszcze żadnych wpisów.</p>
+                <p class="text-xs text-outline mt-2 leading-relaxed">Zacznij od zapisania swojej pierwszej myśli lub inspiracji.</p>
+            </div> 
+            -->
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<!-- Active Tab: Box -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+<!-- FAB (Suppressed based on rules for Details/Settings, but shown here as it's a main listing/dashboard destination) -->
+<button class="fixed right-6 bottom-28 w-14 h-14 rounded-2xl bg-on-surface text-surface shadow-xl flex items-center justify-center active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

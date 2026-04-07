@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c] cursor-pointer active:scale-95 duration-150">arrow_back</span>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a serene woman with a soft smile in natural outdoor lighting, peaceful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAICx3sMZoNTUOnzIfJT7ZXyqo_HIW1gD3aTlMCxaxucDTAbQkJeaJ1JRwI500dL50yCGiZKqMRnZcRgmMW-Q9eJpkyUTviu-pxTovads9M5dDfEyzXUJOZbfrSiIG9g-o8gBAUzTCXxmCvu4U2SaZCLYlMAPqHRKTf7UPb7rt0W5VcZWKa1i0LtbRNqE1cKztLbe-qi8hTJ0Kwm5jKL9ZZS6Q36ySy4GzGbrC-Mnhqvc-t5aE_BbPgQg-mwhcNA8Ebio9bYHA_s"/>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto min-h-screen">
+<!-- Hero Section / Welcome -->
+<section class="mb-10">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight leading-tight">
+                Witaj, <span class="text-primary">Aniu</span>.
+            </h2>
+<p class="text-on-surface-variant mt-2 text-lg leading-relaxed">
+                Dzisiaj jest dobry dzień, by zadbać o siebie.
+            </p>
+</section>
+<!-- Quick Access Shortcuts - Bento Inspired -->
+<section class="grid grid-cols-2 gap-4 mb-10">
+<button class="col-span-2 flex items-center p-5 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center mr-4 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<span class="block font-headline font-bold text-on-surface">Moje inspiracje</span>
+<span class="text-xs text-on-surface-variant font-medium">12 zapisanych cytatów</span>
+</div>
+</button>
+<button class="flex flex-col p-5 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center mb-4 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container">edit_note</span>
+</div>
+<span class="font-headline font-bold text-sm text-on-surface">Moje wpisy</span>
+</button>
+<button class="flex flex-col p-5 bg-surface-container-lowest rounded-xl hover:bg-surface-container-low transition-colors text-left group">
+<div class="w-10 h-10 rounded-xl bg-error-container/20 flex items-center justify-center mb-4 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-error">line_end</span>
+</div>
+<span class="font-headline font-bold text-sm text-on-surface">Znajdź pomoc</span>
+</button>
+</section>
+<!-- Empty State Section -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-headline font-bold text-lg text-on-surface">Ostatnia aktywność</h3>
+<span class="text-sm font-semibold text-primary cursor-pointer">Zobacz wszystko</span>
+</div>
+<div class="bg-surface-container-low rounded-3xl p-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 mb-6 relative">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-2xl"></div>
+<span class="material-symbols-outlined text-6xl text-outline-variant/40 relative z-10">cloud_off</span>
+</div>
+<p class="font-headline font-bold text-on-surface-variant leading-snug">
+                    Tu pojawią się Twoje zapisane myśli.
+                </p>
+<p class="text-sm text-outline mt-2 max-w-[200px]">
+                    Zacznij od zapisania tego, co dzisiaj sprawiło Ci uśmiech.
+                </p>
+<button class="mt-8 px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-full shadow-lg shadow-primary/10 active:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Dodaj pierwszy wpis
+                </button>
+</div>
+</section>
+<!-- Inspiration Card -->
+<section class="mb-10">
+<div class="relative overflow-hidden rounded-3xl p-8 bg-tertiary-container">
+<div class="absolute -right-4 -top-4 w-32 h-32 bg-white/30 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-primary mb-4 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline text-lg italic text-on-tertiary-fixed leading-relaxed mb-6">
+                    "Największym aktem odwagi jest poprosić o pomoc, gdy jej potrzebujesz."
+                </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-on-tertiary-fixed-variant">Inspiracja dnia</span>
+<button class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">share</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_32px_rgba(0,55,73,0.06)] border-t border-[#86b9d2]/20">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+<!-- Floating Action Button - Only rendered where context matches primary action -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-2xl flex items-center justify-center shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</body></html>

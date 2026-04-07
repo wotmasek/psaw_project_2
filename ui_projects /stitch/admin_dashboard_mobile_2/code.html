@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel Administratora - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<button class="text-[#1b6d24] dark:text-[#a3f69c] Active: scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-[#003749] dark:text-[#e7f6ff] font-extrabold tracking-tighter text-lg">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4e8198]" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">AD</div>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="flex-1 mt-16 mb-24 px-6 py-8 flex flex-col gap-8">
+<!-- Welcome Section -->
+<section class="flex flex-col gap-2">
+<p class="text-on-surface-variant text-sm font-medium tracking-wide">Witaj ponownie,</p>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Panel Admina</h2>
+</section>
+<!-- Summary Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-4 shadow-[0_12px_32px_rgba(0,55,73,0.06)]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined p-3 bg-tertiary-container text-tertiary rounded-lg" data-icon="mail">mail</span>
+<span class="text-xs font-bold text-primary bg-primary-fixed px-2 py-1 rounded-full">+12 dzisiaj</span>
+</div>
+<div>
+<p class="text-4xl font-black text-on-surface">42</p>
+<p class="text-sm text-on-surface-variant font-medium">Nowe anonimowe wiadomości</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<p class="text-2xl font-bold text-on-surface">1.2k</p>
+<p class="text-xs text-on-surface-variant leading-tight">Aktywnych użytkowników</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<p class="text-2xl font-bold text-on-surface">89%</p>
+<p class="text-xs text-on-surface-variant leading-tight">Wskaźnik pomocy</p>
+</div>
+</section>
+<!-- Primary Management Areas -->
+<section class="flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-outline">Zarządzanie systemem</h3>
+<div class="flex flex-col gap-3">
+<!-- Action Item 1 -->
+<button class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:bg-[#d9f2ff] transition-colors text-left group">
+<div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-lg">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Zarządzaj wpisami</p>
+<p class="text-xs text-on-surface-variant">Moderuj posty i historie użytkowników</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Action Item 2 -->
+<button class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:bg-[#d9f2ff] transition-colors text-left group">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Inspiracje</p>
+<p class="text-xs text-on-surface-variant">Edytuj codzienne cytaty i motywacje</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Action Item 3 -->
+<button class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:bg-[#d9f2ff] transition-colors text-left group">
+<div class="w-12 h-12 flex items-center justify-center bg-tertiary-container text-tertiary rounded-lg">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Pomoc</p>
+<p class="text-xs text-on-surface-variant">Zarządzaj bazą wiedzy i kontaktami</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Action Item 4 -->
+<button class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:bg-[#d9f2ff] transition-colors text-left group">
+<div class="w-12 h-12 flex items-center justify-center bg-outline-variant/20 text-on-surface-variant rounded-lg">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Użytkownicy</p>
+<p class="text-xs text-on-surface-variant">Uprawnienia i blokowanie kont</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Quick Status Section -->
+<section class="bg-on-background p-8 rounded-[2rem] text-surface-container-lowest flex flex-col gap-6 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-xl font-bold leading-tight">System działa poprawnie</h4>
+<p class="text-sm opacity-80 mt-2">Ostatnia kopia zapasowa wykonana dzisiaj o 04:00.</p>
+<div class="mt-6 flex gap-4">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold text-sm">Logi systemowe</button>
+</div>
+</div>
+<!-- Decorative Abstract Gradient -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-dim opacity-30 blur-[80px]"></div>
+<div class="absolute -left-20 -bottom-20 w-64 h-64 bg-secondary opacity-20 blur-[80px]"></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>dlaczegozyc.pl - Panel Użytkownika</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#d9f2ff] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff] font-extrabold tracking-tighter">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profil użytkownika" class="w-full h-full object-cover" data-alt="close up portrait of a friendly smiling woman in her 30s with soft natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK5OFA1tNLRkDYuXtA8CcMgevqYuV69qyYB1wnLwC5BPswcHviRJ9dATLwGeGkJDl_ywwwT0cOMITupHv9BTSqNs9mx8GScYjdbP3CbMPPRG1YXR1MJFtWI_p1j-QfIMfu3iZRZTct5C0UyfGyoWQWJZzxAPDnKIkCkA0nVgxi4f-rJOnfrxeHMp1a22wyvOv4KR-brIgYeOoMDtPOlCwlgFmsvf7TsoESY-ufzah9_k0qZIgol5LAm9suZUatVXbUFyauOztfoSo"/>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto">
+<!-- Hero Welcome -->
+<section class="mb-10">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface leading-tight tracking-tight mb-2">Witaj, Aleksandro</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed opacity-80">To jest Twoja bezpieczna przestrzeń do refleksji i odnajdywania spokoju.</p>
+</section>
+<!-- Quick Access Grid -->
+<section class="mb-12">
+<h3 class="font-headline text-xs font-bold uppercase tracking-widest text-outline mb-4 px-1">Szybki dostęp</h3>
+<div class="grid grid-cols-1 gap-4">
+<a class="group relative flex items-center p-5 bg-surface-container-lowest rounded-2xl transition-all duration-300 hover:bg-surface-container-low border border-outline-variant/10 shadow-sm overflow-hidden" href="#">
+<div class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<span class="block font-headline font-bold text-on-surface">Moje inspiracje</span>
+<span class="text-xs text-on-surface-variant">Zapisane cytaty i historie</span>
+</div>
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="group relative flex items-center p-5 bg-surface-container-lowest rounded-2xl transition-all duration-300 hover:bg-surface-container-low border border-outline-variant/10 shadow-sm overflow-hidden" href="#">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/50 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="edit_note">edit_note</span>
+</div>
+<div class="flex-1">
+<span class="block font-headline font-bold text-on-surface">Moje wpisy</span>
+<span class="text-xs text-on-surface-variant">Twój dziennik i notatki</span>
+</div>
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="group relative flex items-center p-5 bg-gradient-to-br from-primary to-primary-container rounded-2xl transition-all duration-300 shadow-lg shadow-primary/10 overflow-hidden" href="#">
+<div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="lifeline">line_end</span>
+</div>
+<div class="flex-1 text-white">
+<span class="block font-headline font-bold">Znajdź pomoc</span>
+<span class="text-xs opacity-90">Wsparcie i telefony zaufania</span>
+</div>
+<span class="material-symbols-outlined text-white/50" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Empty State Section -->
+<section class="mb-12">
+<h3 class="font-headline text-xs font-bold uppercase tracking-widest text-outline mb-4 px-1">Ostatnia aktywność</h3>
+<div class="bg-surface-container-low rounded-[2rem] p-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="history_edu">history_edu</span>
+</div>
+<p class="font-headline font-bold text-on-surface text-lg mb-2">Brak niedawnych wpisów</p>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Tu pojawią się Twoje zapisane myśli. Zacznij pisać, aby śledzić swoją drogę do równowagi.</p>
+<button class="px-8 py-3 bg-white text-primary border border-primary/20 font-headline font-bold rounded-full hover:bg-primary-container/20 transition-colors active:scale-95 duration-150">
+                    Stwórz pierwszy wpis
+                </button>
+</div>
+</section>
+<!-- Daily Tip / Insight (Supportive Element) -->
+<section class="mb-6">
+<div class="p-6 bg-tertiary-container/30 rounded-2xl border border-tertiary-container/50">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary shrink-0 mt-1" data-icon="lightbulb_circle">lightbulb_circle</span>
+<div>
+<h4 class="font-headline font-bold text-tertiary mb-1">Dobra myśl na dziś</h4>
+<p class="text-sm text-on-tertiary-container/80 italic leading-relaxed">"Nawet najdłuższa podróż zaczyna się od jednego, małego kroku. Dzisiejszy krok masz już za sobą."</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed mt-1">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed mt-1">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed mt-1">Help</span>
+</a>
+</nav>
+<!-- FAB Suppression check: FAB is appropriate for Home/Dashboard -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 active:scale-90 hover:shadow-primary/20 z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+</body></html>

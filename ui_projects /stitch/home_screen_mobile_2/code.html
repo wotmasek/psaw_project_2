@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "2xl": "1.5rem", "3xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="font-headline font-extrabold tracking-tighter text-[#003749] dark:text-[#e7f6ff] text-xl">dlaczegozyc.pl</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-semibold text-primary hover:bg-surface-container-low px-3 py-1.5 rounded-lg transition-colors">Zaloguj</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto">
+<!-- Hero Section -->
+<header class="mb-12">
+<h1 class="font-headline font-extrabold text-4xl text-on-surface tracking-tight leading-tight mb-4">
+                Możemy Ci pomóc.
+            </h1>
+<p class="text-body-lg text-on-surface-variant leading-relaxed opacity-90">
+                dlaczegozyc.pl to spokojna przestrzeń pełna inspiracji, anonimowa skrzynka do dzielenia się myślami oraz łatwy dostęp do profesjonalnego wsparcia.
+            </p>
+</header>
+<!-- Visual Anchor / Hero Image (Asymmetric Layout) -->
+<div class="relative w-full h-48 mb-12 rounded-3xl overflow-hidden shadow-sm">
+<img alt="Calm scene" class="w-full h-full object-cover" data-alt="Close up of soft green leaves with morning dew in gentle morning sunlight, evoking a sense of renewal and peace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx9I9sZgA32WxxuXzAHXwuS-dpTfhMBDZcZ5mZ2Cqem5QuQT5ShwOhcW11qXQQuQ844FSrTQYgO9ZZW4842PBdobwSghlq6sd1IN_Sj85sopEbLxbziVZ1RcdWC8iqDEO0YbYCDIDA5VpXWD3VyD4B1xGYQ47X9sGzUJbJJUa6bsAt5Tk14Tos0U7YrHab8yOREI96FCeOhO5Z1MtqnvMc4RJgfBVFktMWtD81ilBKclQH1nDYOidZbitY6bYDTOujnEdq69J4qic"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/20 to-transparent"></div>
+</div>
+<!-- Entry Points: Bento-inspired Mobile Grid -->
+<section class="space-y-4">
+<!-- Primary Action: Help (High Importance) -->
+<button class="w-full text-left group relative overflow-hidden bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] p-6 rounded-3xl shadow-[0_12_32_rgba(0,55,73,0.06)] transition-all active:scale-95 duration-150">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<span class="material-symbols-outlined text-white mb-3 text-3xl" style="font-variation-settings: 'FILL' 1;">line_end</span>
+<h2 class="font-headline font-bold text-2xl text-on-primary mb-1">Pomoc</h2>
+<p class="text-on-primary/90 text-sm max-w-[200px]">Skontaktuj się ze specjalistą lub znajdź linię wsparcia.</p>
+</div>
+<div class="bg-white/20 backdrop-blur-sm p-2 rounded-full text-white">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</button>
+<!-- Secondary Action: Inspiration -->
+<div class="grid grid-cols-2 gap-4">
+<button class="text-left bg-surface-container-lowest p-5 rounded-3xl shadow-sm border border-outline-variant/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary mb-3" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-headline font-bold text-lg text-on-surface mb-1">Inspiracja</h3>
+<p class="text-on-surface-variant text-xs leading-snug">Historie, które dają nadzieję na jutro.</p>
+</button>
+<!-- Secondary Action: Box -->
+<button class="text-left bg-surface-container-low p-5 rounded-3xl active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary mb-3" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h3 class="font-headline font-bold text-lg text-on-surface mb-1">Skrzynka</h3>
+<p class="text-on-surface-variant text-xs leading-snug">Podziel się anonimowo tym, co czujesz.</p>
+</button>
+</div>
+</section>
+<!-- Trust & Safety Footer Section -->
+<section class="mt-16 text-center space-y-6">
+<div class="p-6 bg-tertiary-container/30 rounded-2xl border border-tertiary/10">
+<p class="text-sm text-tertiary font-medium italic">
+                    "Twoje bezpieczeństwo i anonimowość są dla nas priorytetem. Nie jesteś sam."
+                </p>
+</div>
+<div class="flex flex-col items-center gap-3">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Dołącz do nas</p>
+<div class="flex gap-4">
+<a class="text-sm font-bold text-primary px-4 py-2 bg-primary-container/20 rounded-full" href="#">Zarejestruj się</a>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<!-- Inspiration -->
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<!-- Box -->
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<!-- Help -->
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] dark:hover:text-[#a3f69c] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

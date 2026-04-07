@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#d9f2ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#1b6d24]">Edytuj wpis</h1>
+</div>
+<div class="flex items-center">
+<span class="font-['Manrope'] text-[#003749] font-extrabold tracking-tighter">dlaczegozyc.pl</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] h-[1px] w-full"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 px-4 max-w-md mx-auto space-y-8">
+<!-- Status & Meta Section (Asymmetric Editorial Style) -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="font-label text-xs font-semibold text-outline tracking-wider uppercase">Metadane</p>
+<h2 class="font-headline text-2xl font-bold text-on-surface">ID: #8829-X</h2>
+</div>
+<div class="bg-tertiary-container px-3 py-1 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs font-bold text-on-tertiary-container">Aktywny</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 space-y-4 shadow-sm">
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant">Widoczność wpisu</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-primary bg-primary-container text-on-primary-container transition-all">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-semibold text-sm">Opublikowany</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-transparent bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">visibility_off</span>
+<span class="font-semibold text-sm">Ukryty</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Form Fields -->
+<form class="space-y-6">
+<!-- Content Field -->
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1" for="entry-title">Tytuł wpisu</label>
+<input class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary rounded-xl px-4 py-4 font-body text-on-surface placeholder:text-outline/50 transition-all" id="entry-title" type="text" value="Znalezienie spokoju w codzienności"/>
+</div>
+<!-- Author Context (Surface Shift) -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="text-xs font-medium text-on-surface-variant">Autor</p>
+<p class="text-sm font-bold text-on-surface">Marek Kowalski (Admin)</p>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1" for="entry-content">Treść wiadomości</label>
+<textarea class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-xl px-4 py-4 font-body text-on-surface leading-relaxed shadow-sm transition-all" id="entry-content" rows="8">Dzisiaj chciałbym się podzielić kilkoma przemyśleniami na temat higieny cyfrowej. Często zapominamy, że spokój zaczyna się od wyłączenia powiadomień. Moje doświadczenie z ostatniego tygodnia pokazuje, że 2 godziny dziennie bez telefonu zmieniają perspektywę na resztę dnia...</textarea>
+</div>
+<!-- Categories / Tags (Bento card style) -->
+<div class="bg-surface-container-low rounded-xl p-6 space-y-4">
+<label class="font-label text-sm font-semibold text-on-surface-variant">Kategorie systemowe</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1.5 rounded-lg text-xs font-medium border border-outline-variant/10 flex items-center gap-1">
+                        Inspiracja <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1.5 rounded-lg text-xs font-medium border border-outline-variant/10 flex items-center gap-1">
+                        Poradnik <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+<button class="bg-primary/5 text-primary px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add</span> Dodaj
+                    </button>
+</div>
+</div>
+<!-- Advanced Controls -->
+<div class="pt-4 border-t border-outline-variant/10">
+<div class="flex items-center justify-between py-2">
+<div class="space-y-0.5">
+<p class="font-semibold text-sm text-on-surface">Wyróżniony wpis</p>
+<p class="text-xs text-on-surface-variant">Wyświetlany na samej górze sekcji</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center px-1">
+<div class="w-4 h-4 bg-white rounded-full shadow-md"></div>
+</div>
+</div>
+<div class="flex items-center justify-between py-4">
+<div class="space-y-0.5">
+<p class="font-semibold text-sm text-on-surface">Komentarze</p>
+<p class="text-xs text-on-surface-variant">Zezwalaj na interakcję pod wpisem</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer flex items-center justify-end px-1">
+<div class="w-4 h-4 bg-white rounded-full shadow-md"></div>
+</div>
+</div>
+</div>
+<!-- Destructive Action Space -->
+<div class="pt-8">
+<button class="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-error font-bold hover:bg-error-container/10 transition-colors border border-error/20" type="button">
+<span class="material-symbols-outlined">delete</span>
+                    Usuń trwale ten wpis
+                </button>
+</div>
+</form>
+</main>
+<!-- Bottom Navigation Shell (Mobile-first actions) -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-8 pt-4 bg-[#f4faff]/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)]">
+<button class="flex-1 mr-2 py-4 px-4 rounded-2xl font-['Inter'] text-sm font-semibold text-on-surface-variant hover:bg-surface-container transition-all text-center">
+            Anuluj
+        </button>
+<button class="flex-[2] py-4 px-4 rounded-2xl font-['Inter'] text-sm font-bold text-on-primary bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] shadow-lg shadow-primary/20 active:scale-95 transition-all text-center">
+            Zapisz zmiany
+        </button>
+</div>
+<!-- Admin Drawer Navigation (Hidden on Mobile) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-64 flex-col py-8 bg-[#e7f6ff] dark:bg-slate-800 shadow-xl rounded-r-2xl z-[60]">
+<div class="px-6 mb-8">
+<h3 class="font-['Manrope'] text-xl font-black text-[#003749] dark:text-white tracking-tight">Admin Panel</h3>
+</div>
+<nav class="flex flex-col flex-1 divide-y divide-[#86b9d2]/10">
+<div class="py-2">
+<a class="flex items-center gap-4 px-4 py-3 mx-2 rounded-lg text-[#4e8198] hover:bg-[#d9f2ff] transition-all font-['Inter'] text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 mx-2 rounded-lg text-[#4e8198] hover:bg-[#d9f2ff] transition-all font-['Inter'] text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">flag</span> User Reports
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 mx-2 rounded-lg bg-[#ffffff] text-[#1b6d24] font-['Inter'] text-sm font-semibold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_note</span> Content Moderation
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 mx-2 rounded-lg text-[#4e8198] hover:bg-[#d9f2ff] transition-all font-['Inter'] text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">monitoring</span> Analytics
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 mx-2 rounded-lg text-[#4e8198] hover:bg-[#d9f2ff] transition-all font-['Inter'] text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                </a>
+</div>
+</nav>
+<div class="px-6 mt-auto">
+<div class="bg-white/50 p-4 rounded-xl border border-outline-variant/20">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Wersja Systemu</p>
+<p class="text-xs font-semibold text-on-surface">v2.4.0-stable</p>
+</div>
+</div>
+</aside>
+</body></html>

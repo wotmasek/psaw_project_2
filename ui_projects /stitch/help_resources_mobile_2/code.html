@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pomoc - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#d9f2ff] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 text-[#1b6d24] dark:text-[#a3f69c]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</h1>
+</div>
+<div class="bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full absolute bottom-0 left-0"></div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 pt-24 pb-32 px-6 max-w-md mx-auto w-full">
+<!-- Hero Message -->
+<section class="mb-10 text-left">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight leading-tight mb-4">Potrzebujesz pomocy?</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Pamiętaj, że nie musisz przechodzić przez to sam. Poniżej znajdziesz sprawdzone źródła wsparcia.</p>
+</section>
+<!-- Emergency Highlight (Bento-style layout) -->
+<section class="mb-10">
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-2xl shadow-[0_12px_32px_rgba(0,55,73,0.06)] flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="bg-surface-container-lowest/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-primary" data-icon="emergency" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-primary/80">Czynne 24/7</span>
+</div>
+<div>
+<h3 class="text-on-primary font-headline font-bold text-xl mb-1">Kryzysowy Telefon Zaufania</h3>
+<p class="text-on-primary/90 text-sm font-medium">Bezpłatna pomoc dla osób w kryzysie emocjonalnym.</p>
+</div>
+<a class="w-full bg-surface-container-lowest py-4 rounded-xl flex items-center justify-center gap-3 text-primary font-bold text-lg active:scale-95 transition-transform" href="tel:116123">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                    116 123
+                </a>
+</div>
+</section>
+<!-- Help Categories -->
+<div class="space-y-6">
+<!-- Category 1: Telefony Zaufania -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="phone_callback">phone_callback</span>
+<h4 class="font-headline font-bold text-on-surface">Telefony zaufania</h4>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1 border-l-2 border-primary-container pl-4">
+<span class="text-xs font-bold text-on-surface-variant">DLA DZIECI I MŁODZIEŻY</span>
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-on-surface">116 111</span>
+<span class="text-sm text-outline">Dostępny 24/7</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-primary-container pl-4">
+<span class="text-xs font-bold text-on-surface-variant">LINIA WSPARCIA DLA DOROSŁYCH</span>
+<div class="flex justify-between items-center">
+<span class="font-headline font-bold text-on-surface">800 70 22 22</span>
+<span class="text-sm text-outline">Bezpłatnie</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 2: Lokalne Ośrodki -->
+<div class="bg-surface-container-low rounded-2xl p-5 overflow-hidden relative">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<h4 class="font-headline font-bold text-on-surface">Lokalne ośrodki</h4>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">
+                        Znajdź najbliższy Ośrodek Interwencji Kryzysowej (OIK) w swojej okolicy.
+                    </p>
+<button class="flex items-center gap-2 bg-surface-container-lowest text-on-surface px-4 py-2 rounded-lg font-semibold text-sm shadow-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="map">map</span>
+                        Otwórz mapę ośrodków
+                    </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="distance">distance</span>
+</div>
+</div>
+<!-- Category 3: Materiały Edukacyjne -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-tertiary-container/30 p-4 rounded-2xl border border-tertiary-fixed-dim/40">
+<span class="material-symbols-outlined text-tertiary mb-3" data-icon="menu_book">menu_book</span>
+<h5 class="font-headline font-bold text-sm text-on-surface mb-1">Materiały</h5>
+<p class="text-xs text-on-surface-variant">Baza wiedzy o zdrowiu psychicznym.</p>
+</div>
+<div class="bg-surface-container-high/30 p-4 rounded-2xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline mb-3" data-icon="chat_bubble">chat_bubble</span>
+<h5 class="font-headline font-bold text-sm text-on-surface mb-1">Czat online</h5>
+<p class="text-xs text-on-surface-variant">Anonimowa rozmowa z terapeutą.</p>
+</div>
+</div>
+<!-- Info Alert -->
+<div class="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<div>
+<h6 class="font-headline font-bold text-sm text-on-surface mb-1">Ważna informacja</h6>
+<p class="text-xs text-on-surface-variant leading-relaxed">Jeśli czujesz, że Twoje życie lub zdrowie jest w bezpośrednim niebezpieczeństwie, nie zwlekaj i zadzwoń pod numer alarmowy 112.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Anchor Image -->
+<div class="mt-10 rounded-3xl overflow-hidden aspect-[16/9] relative">
+<img alt="Safe space" class="w-full h-full object-cover" data-alt="Soft focused image of sunlight filtering through lush green leaves in a quiet garden, peaceful and hopeful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyCoujiRgGFysr33h6rngCEEFSIrnOHeX6PZfpibkR-XPive2FDdhWK3bAVAepzJpnpiEKaPr-PjhpcKbf0yFoqCdA6vzdbPFhDzm-9AZLZRT0bH8TMKb_NRP57AOp7MsGXDR1j1JdWjkzkRvaIVhgGoOaKEOyCtQnmGeRaY3eH9ftwdCj04pzp23BLxKzy4H-fDybOFJ8Eu4SowBgXmjKaoRjvvQNIGo58w6XhKUtBGHi17j1j141KCwLocPEHNyC3oToIqa8Fk8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent"></div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="lifeline" style="font-variation-settings: 'FILL' 1;">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Panel - Zarządzanie wpisami</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#e7f6ff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="text-[#1b6d24] dark:text-[#a3f69c] Active: scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">Admin Panel</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4e8198] dark:text-slate-400" data-icon="search">search</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">A</div>
+</div>
+<!-- style_separation_logic -->
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-20 pb-28 px-4 space-y-6">
+<!-- Header Section with Stats -->
+<div class="space-y-2 mb-6">
+<h2 class="font-headline text-2xl font-extrabold text-on-surface tracking-tight px-2">Recent User Entries</h2>
+<p class="text-on-surface-variant text-sm px-2">Reviewing messages from the community.</p>
+</div>
+<!-- Filter/Action Row -->
+<div class="flex gap-2 overflow-x-auto pb-2 px-1 no-scrollbar">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> All Entries
+            </button>
+<button class="bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium flex-shrink-0">Pending</button>
+<button class="bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium flex-shrink-0">Moderated</button>
+<button class="bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium flex-shrink-0">Anonymous</button>
+</div>
+<!-- Entries List -->
+<div class="space-y-4">
+<!-- Card Item 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a young smiling man with short hair and a neutral grey background soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-PhG8CZEIhMwWSxKyvFnszug7OdsPCpKvN8-g47uhHATCOQYfa58SeOX2FDT6Ws6X1Cc_JyzNuYaNwB8eBCnhUDQ_Bi-KTNcRYvC7kD3Owj0oL4o3AD8rWuPbd6t5WGk5uHf3X2BnWvQheu8H1wQC9RbAwH44r3zqguMzeSLNLXcvCgChJ3imTw4QQMeJk7UXALzH03QYVvRqx82oKqqMPYxqd9eDVuKqkyLV0iQ31NI0XisZH6213dLrcE4G0hxwzCZ3DA1bU8I"/>
+</div>
+<div>
+<h3 class="font-bold text-on-surface text-sm">Jakub Wiśniewski</h3>
+<p class="text-[10px] text-on-surface-variant font-medium">24 min temu • Publiczny</p>
+</div>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded text-[10px] font-bold">AKTYWNY</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed mb-4 line-clamp-3">
+                    Znalazłem dzisiaj chwilę spokoju w parku. To niesamowite, jak proste wyjście na zewnątrz może zmienić perspektywę na cały dzień. Cieszę się każdą chwilą.
+                </p>
+<div class="flex items-center justify-between border-t border-surface-container pt-3">
+<div class="flex gap-1">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 bg-surface-container-low rounded-lg text-xs font-bold text-primary">
+                        Zmień status
+                        <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</article>
+<!-- Card Item 2 - Anonymous -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 border-outline-variant">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface text-sm">Anonimowy</h3>
+<p class="text-[10px] text-on-surface-variant font-medium">1 godz temu • Wiadomość</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold">OCZEKUJĄCY</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed mb-4 line-clamp-3 italic">
+                    "Czasami czuję się przytłoczony tym wszystkim. Czy są tutaj jacyś inni administratorzy, którzy mogliby pomóc w moderacji wieczorami?"
+                </p>
+<div class="flex items-center justify-between border-t border-surface-container pt-3">
+<div class="flex gap-1">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 bg-surface-container-low rounded-lg text-xs font-bold text-primary">
+                        Zatwierdź
+                    </button>
+</div>
+</article>
+<!-- Card Item 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern lifestyle headshot of a woman with glasses warm natural lighting professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD26tNmZ72S94JTi_GxkqZBWn11EhKx9icUgdcLH6wvQJbmPvE0FqafnMaQ3IRG4M9tdVSeuvq6ngUnPsJBZ0MJDO-4l9luumxL6tP5fXhJ8LGEPmMP56EXoxRgeTD514vK5t_QkyPyo8bAxFLrPZp89uL8cTgJh5WfJCGTMY175M7BGUK9HgkqoB1C8357jErk2SpcC5JPfXlP67FBCZjn2p724RpkYkSB5XLJZOrN9r73EK0aooHuL3tCiR0KsCzflPt4Q9v5agw"/>
+</div>
+<div>
+<h3 class="font-bold text-on-surface text-sm">Anna Kowalska</h3>
+<p class="text-[10px] text-on-surface-variant font-medium">3 godz temu • Artykuł</p>
+</div>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded text-[10px] font-bold">AKTYWNY</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed mb-4 line-clamp-3">
+                    Wprowadzenie do medytacji uważności. W tym wpisie dzielę się moimi ulubionymi technikami oddychania, które pomogły mi przetrwać najtrudniejsze momenty zeszłego roku.
+                </p>
+<div class="flex items-center justify-between border-t border-surface-container pt-3">
+<div class="flex gap-1">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 bg-surface-container-low rounded-lg text-xs font-bold text-primary">
+                        Zmień status
+                        <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</article>
+<!-- Card Item 4 - Reported/Issue -->
+<article class="bg-error-container/5 rounded-xl p-4 shadow-sm border-l-4 border-error">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden opacity-70">
+<img class="w-full h-full object-cover" data-alt="unfocused abstract silhouette profile on muted blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0X7TkcBCzartqVWllf7ct8ycajVeSnr6wfh09GIkeAMWz87MlIs53VyWQECLEqTfUJxZxijAn5L1x8Ea0dBZ5j9Pdrz2FX7zFeZJ9CMPPQEbOnnVyxRXybk9P6xOH9sf9rgnl94-Y6O2OlJ6UikJAM3oOLPlvY_oXJwyZkIPUkhrkz-PIhQgCYL131R1yrvZXn-1ZHl7Jm8ROfcGdugUXmODKLQzPgGGtgFYekXJxMEteidtbheI4nDh4554PWG168kfSOEtIruE"/>
+</div>
+<div>
+<h3 class="font-bold text-on-surface text-sm">Marek L.</h3>
+<p class="text-[10px] text-on-error-container font-medium">5 godz temu • Zgłoszone</p>
+</div>
+</div>
+<span class="bg-error text-on-error px-2 py-1 rounded text-[10px] font-bold">BLOKADA</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4 line-clamp-2 line-through opacity-60">
+                    Niestosowny komentarz naruszający zasady społeczności dotyczący wzajemnego szacunku i bezpieczeństwa.
+                </p>
+<div class="flex items-center justify-between border-t border-surface-container pt-3">
+<div class="flex gap-1">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg transition-colors text-error">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 bg-error text-white rounded-lg text-xs font-bold">
+                        Odblokuj
+                    </button>
+</div>
+</article>
+</div>
+<!-- Load More Section -->
+<div class="flex justify-center py-4">
+<button class="text-primary font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+                Załaduj więcej
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl border-t border-[#86b9d2]/20">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+<!-- Contextual FAB (Restricted to relevant views, here it serves as "New Entry" or "Moderation Tool") -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-full shadow-lg flex items-center justify-center z-40 Active:scale-95 duration-150">
+<span class="material-symbols-outlined text-2xl" data-icon="add" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

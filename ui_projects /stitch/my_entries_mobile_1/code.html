@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#d9f2ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24] dark:text-[#a3f69c]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749] dark:text-[#e7f6ff]">dlaczegozyc.pl</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[#d9f2ff] text-[#4e8198] transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Header Section -->
+<header class="mb-10">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-2">Moje wpisy</h2>
+<p class="text-on-surface-variant text-body-lg leading-relaxed">Twoja bezpieczna przestrzeń do refleksji i inspiracji.</p>
+</header>
+<!-- Category Tabs -->
+<div class="flex gap-2 mb-8 overflow-x-auto hide-scrollbar">
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap shadow-sm">Wszystkie</button>
+<button class="bg-surface-container-low text-on-surface-variant px-6 py-2.5 rounded-full font-medium text-sm whitespace-nowrap border border-outline-variant/10">Refleksje</button>
+<button class="bg-surface-container-low text-on-surface-variant px-6 py-2.5 rounded-full font-medium text-sm whitespace-nowrap border border-outline-variant/10">Inspiracje</button>
+</div>
+<!-- Entries List -->
+<div class="space-y-6">
+<!-- Entry Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[11px] font-bold tracking-widest uppercase text-tertiary bg-tertiary-container px-3 py-1 rounded-full">DZISIAJ</span>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2 leading-tight">Poranny spokój przy kawie</h3>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">Dziś poczułam niezwykły spokój obserwując pierwsze promienie słońca. To był ważny moment uważności, którego tak bardzo potrzebowałam...</p>
+<div class="flex items-center justify-between border-t border-surface-container pt-4">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs font-medium">08:45</span>
+</div>
+<div class="flex gap-3">
+<button class="text-primary text-xs font-bold px-4 py-2 rounded-lg bg-primary-container/20 hover:bg-primary-container/40 transition-colors">EDYCJA</button>
+<button class="text-on-surface text-xs font-bold px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">CZYTAJ</button>
+</div>
+</div>
+</article>
+<!-- Entry Card 2 (Inspiration) -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[11px] font-bold tracking-widest uppercase text-[#4e8198] bg-[#d6e5ef] px-3 py-1 rounded-full">INSPIRACJA</span>
+<span class="material-symbols-outlined text-outline text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<div class="flex gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of a delicate green leaf with morning dew drops in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbK4WdaNrgBsDmqRS3fTZzHZkOnnMgmy4xqSADJVEXHWe-0YTCJ_erVXU_nSgiKS5DlVquXlDgvxiCtQodquvmE9sGEuQp3c5IRW2YvbeU665TqNfeIJqw6Pk46JVZRq_ktiuTICmLK_KvYvlfS5SKgInBMFxNPGRGXhGUOaaszWMw9w4RnLc4ws7Ei_pwxpkDUBUP6rtB0MojpKkgnkZmL9DO1usR20xr8KMbJARryq9T7PE2Fz13s8c-5qAMgOWfugpZjtjIfHY"/>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Metoda 5-4-3-2-1 na lęk</h3>
+<p class="text-on-surface-variant text-xs mt-1">Zapisane z: Sekcja Porad</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-container pt-4">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="text-xs font-medium">12 Paź 2023</span>
+</div>
+<button class="text-on-surface text-xs font-bold px-6 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">POKAŻ</button>
+</div>
+</article>
+<!-- Entry Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_12px_32px_rgba(0,55,73,0.04)] border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[11px] font-bold tracking-widest uppercase text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">WCZORAJ</span>
+<button class="text-outline">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2 leading-tight">Spacer po lesie po deszczu</h3>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">Zapach igliwia i wilgotnej ziemi. Nic tak nie regeneruje jak kontakt z naturą bez telefonu pod ręką...</p>
+<div class="flex items-center justify-between border-t border-surface-container pt-4">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-xs font-medium">17:30</span>
+</div>
+<div class="flex gap-3">
+<button class="text-primary text-xs font-bold px-4 py-2 rounded-lg bg-primary-container/20 hover:bg-primary-container/40 transition-colors">EDYCJA</button>
+<button class="text-on-surface text-xs font-bold px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">CZYTAJ</button>
+</div>
+</div>
+</article>
+<!-- Placeholder for Empty State or End of List -->
+<div class="py-12 flex flex-col items-center justify-center text-center opacity-40">
+<span class="material-symbols-outlined text-4xl mb-4">park</span>
+<p class="text-sm font-medium">To wszystkie Twoje wpisy z tego miesiąca</p>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-28 right-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 transition-all duration-300 ease-out hover:text-[#1b6d24]" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 transition-all duration-300 ease-out hover:text-[#1b6d24]" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 transition-all duration-300 ease-out hover:text-[#1b6d24]" href="#">
+<span class="material-symbols-outlined">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

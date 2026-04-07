@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#515d54",
+              "tertiary-fixed-dim": "#d9e6da",
+              "surface-container": "#d9f2ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-fixed": "#d6e5ef",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "surface": "#f4faff",
+              "secondary": "#53616a",
+              "outline": "#4e8198",
+              "background": "#f4faff",
+              "secondary-container": "#d6e5ef",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#e7f6ff",
+              "primary-fixed": "#a3f69c",
+              "on-error": "#fff7f6",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-container": "#a3f69c",
+              "surface-variant": "#bde9ff",
+              "error": "#9e422c",
+              "on-tertiary-fixed": "#3f4b42",
+              "on-primary-fixed": "#004b0f",
+              "outline-variant": "#86b9d2",
+              "inverse-surface": "#011017",
+              "on-surface": "#003749",
+              "surface-bright": "#f4faff",
+              "on-secondary-container": "#46545d",
+              "surface-container-high": "#cbedff",
+              "error-container": "#fe8b70",
+              "on-surface-variant": "#30657b",
+              "tertiary": "#566259",
+              "on-error-container": "#742410",
+              "primary": "#1b6d24",
+              "primary-dim": "#076019",
+              "on-tertiary": "#effcf0",
+              "on-background": "#003749",
+              "on-primary-container": "#065f18",
+              "primary-fixed-dim": "#95e88f",
+              "tertiary-dim": "#4a564d",
+              "on-secondary-fixed": "#33414a",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "surface-container-highest": "#bde9ff",
+              "on-secondary": "#f4faff",
+              "on-primary": "#e5ffdd",
+              "surface-dim": "#a7e2ff",
+              "on-primary-fixed-variant": "#176a21",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "secondary-fixed-dim": "#c8d6e1",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "secondary-dim": "#47555e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f4faff;
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-16 px-8 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-green-800 dark:text-green-400 font-['Manrope']">
+                dlaczegozyc.pl
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] font-medium text-sm tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-300 transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-300 transition-colors" href="#">Inspirations</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-300 transition-colors" href="#">Anonymous Box</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-300 transition-colors" href="#">Help</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-['Manrope'] font-bold text-sm active:scale-95 duration-200 ease-in-out">
+                    Emergency Help
+                </button>
+<div class="p-1 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">account_circle</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content: error_state_desktop -->
+<main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- Visual Element (Bento-style layout for error representation) -->
+<div class="order-2 md:order-1 relative">
+<div class="grid grid-cols-2 grid-rows-2 gap-4 aspect-square">
+<div class="bg-surface-container-high rounded-xl flex items-center justify-center p-8">
+<span class="material-symbols-outlined text-outline text-6xl opacity-40">search_off</span>
+</div>
+<div class="bg-tertiary-container rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Calm morning landscape with misty mountains and soft green valley light to evoke peace and tranquility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt8M7gmuqjutnBCjjn313JJ3aIKFTkdRyH6Eymuhjq4Ns41eQum_7Q5I-DpsW7nm-i98btv--RxnT4dBGhbjKhVIvbPE0dDM1qHnMWxh9Sb5B6BO3mbsfv5Z2f-ASN7JI73gUfJR-q9Zndfoq-USzUW_S3qX2OkteVpCM6ME5tV3AG4-hlFJrJxQt9wD5421FeQ5RUf1s1ErEe6aLiz97WIlQlLwhDiZZjkRyS8eo7MD2QhdtNCQ6jfIuDIQCugM6_U0bFK0pc3Fg"/>
+</div>
+<div class="bg-secondary-container/50 rounded-xl flex flex-col justify-end p-6 border border-white/20">
+<span class="material-symbols-outlined text-primary mb-2">park</span>
+<div class="h-1 w-12 bg-primary rounded-full"></div>
+</div>
+<div class="bg-primary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-5xl">explore</span>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -z-10 -top-8 -left-8 w-32 h-32 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -z-10 -bottom-8 -right-8 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl"></div>
+</div>
+<!-- Content Area -->
+<div class="order-1 md:order-2 space-y-8 text-center md:text-left">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase font-['Inter']">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Status: Not Found
+                    </div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-background tracking-tight leading-tight">
+                        Chwila <span class="text-primary italic">oddechu...</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-md">
+                        Wygląda na to, że ta strona postanowiła odpocząć. Nie martw się, to tylko krótka przerwa w Twojej podróży.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-headline font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 active:scale-95" href="#">
+                        Wróć do domu
+                        <span class="material-symbols-outlined ml-2 text-xl">home</span>
+</a>
+<a class="inline-flex items-center justify-center px-8 py-4 border-2 border-outline/30 text-on-background font-headline font-bold rounded-xl hover:bg-surface-container transition-all duration-200 active:scale-95" href="#">
+                        Centrum pomocy
+                        <span class="material-symbols-outlined ml-2 text-xl">support_agent</span>
+</a>
+</div>
+<div class="pt-4">
+<p class="font-body text-sm text-on-surface-variant/60 flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-base">info</span>
+                        Błąd 404 • To się zdarza nawet najlepszym
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-['Manrope'] font-semibold text-slate-800 dark:text-slate-200">dlaczegozyc.pl</div>
+<p class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400">© 2024 dlaczegozyc.pl. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Emergency Resources</a>
+<a class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

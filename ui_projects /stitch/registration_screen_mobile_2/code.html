@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar Suppressed for Registration Flow - Semantic Shell Mandate Applied -->
+<!-- We use a custom slim header for navigation back to entry point -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-surface/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-headline font-extrabold tracking-tighter text-on-surface text-lg">dlaczegozyc.pl</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-6 pt-24 pb-12 max-w-lg mx-auto w-full">
+<!-- Hero Section Asymmetry -->
+<div class="w-full mb-10 text-left">
+<h1 class="font-headline font-extrabold text-3xl tracking-tight text-on-surface mb-4">
+                Dołącz do nas
+            </h1>
+<p class="text-on-surface-variant leading-relaxed opacity-90">
+                Twoje konto pomaga śledzić Twoje wpisy i inspiracje.
+            </p>
+</div>
+<!-- Registration Form Container -->
+<div class="w-full space-y-8">
+<form class="space-y-6">
+<!-- Input Group: Login -->
+<div class="space-y-2">
+<label class="block font-label text-sm font-semibold text-on-surface-variant ml-1" for="login">E-mail lub nazwa użytkownika</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline/60 group-focus-within:text-primary transition-colors" data-icon="person">person</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-0 outline-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl transition-all font-body text-on-surface placeholder:text-outline/50" id="login" name="login" placeholder="Wpisz swój e-mail" type="text"/>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="space-y-2">
+<label class="block font-label text-sm font-semibold text-on-surface-variant ml-1" for="password">Hasło</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline/60 group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+</div>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-low border-0 outline-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl transition-all font-body text-on-surface placeholder:text-outline/50" id="password" name="password" placeholder="Minimum 8 znaków" type="password"/>
+<div class="absolute inset-y-0 right-4 flex items-center cursor-pointer">
+<span class="material-symbols-outlined text-outline/60" data-icon="visibility">visibility</span>
+</div>
+</div>
+</div>
+<!-- Input Group: Confirm Password (Success State Example) -->
+<div class="space-y-2">
+<label class="block font-label text-sm font-semibold text-on-surface-variant ml-1" for="confirm_password">Potwierdź hasło</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/60 transition-colors" data-icon="lock_reset">lock_reset</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-tertiary-container border-0 outline-none ring-2 ring-primary rounded-xl transition-all font-body text-on-surface placeholder:text-outline/50" id="confirm_password" name="confirm_password" placeholder="Powtórz hasło" type="password"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<p class="text-primary text-[11px] font-semibold flex items-center gap-1 ml-1">
+                        Hasła są identyczne
+                    </p>
+</div>
+<!-- Error State Example (Hidden or visual mock) -->
+<div class="hidden space-y-2">
+<div class="p-4 bg-error-container/20 rounded-xl flex items-start gap-3 border border-error/10">
+<span class="material-symbols-outlined text-error" data-icon="error">error</span>
+<p class="text-error text-sm font-medium leading-tight">Podany adres e-mail jest już zajęty. Spróbuj innego.</p>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-4">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg rounded-xl shadow-[0_8px_24px_rgba(27,109,36,0.15)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+<span>Załóż konto</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Social Login Alternative -->
+<div class="relative py-4 flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/10"></div>
+</div>
+<span class="relative px-4 bg-background text-outline/60 text-xs font-semibold uppercase tracking-widest">lub kontynuuj przez</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-surface-container-low transition-colors active:scale-95">
+<img alt="Google icon" class="w-5 h-5 opacity-80" data-alt="minimalist clean google logo icon with multi-color G symbol on white circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnnTkyR1wnVMylrAdwihyboGNaJC01EZxO3RE-4Okwli2ue83qlAYUR3tQItE1TWJWZ0o9hekaa-Lgx4RymjB8CibVC0TRCSkfNAgg-KglcjVCGdxffFOq3Qj6bJ7DucKYZvTq5ThFox6EdZq2IMV0kUURaQTW2cKGR7FOEbBGmDBULYMmhusXdvvqDrPZ-MTONdRQAesbZROpB7Zql4nIkzHvZUoGTQYWZJfehCQGGS2vSaguKagQZprYZ00YotOUEaC5vky6Y0k"/>
+<span class="font-label font-semibold text-on-surface text-sm">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-4 rounded-xl bg-surface-container-lowest border border-outline-variant/10 hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[#1877F2]" data-icon="facebook" style="font-variation-settings: 'FILL' 1;">social_leaderboard</span>
+<span class="font-label font-semibold text-on-surface text-sm">Facebook</span>
+</button>
+</div>
+<!-- Login Link -->
+<div class="text-center pt-8">
+<p class="text-on-surface-variant text-sm">
+                    Masz już konto? 
+                    <a class="text-primary font-bold hover:underline ml-1" href="#">Zaloguj się</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Visual Anchor - Subtle Gradient Decoration -->
+<div class="fixed bottom-0 left-0 w-full h-1/4 -z-10 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+<!-- BottomNavBar Suppressed - Transactional Task-Focused Shell Rule -->
+<!-- Decorative Aesthetic Corner -->
+<div class="fixed -bottom-20 -right-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl -z-10"></div>
+<div class="fixed -top-20 -left-20 w-48 h-48 rounded-full bg-tertiary-container/20 blur-3xl -z-10"></div>
+</body></html>

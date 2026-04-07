@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pomoc - dlaczegozyc.pl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#d9f2ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#1b6d24]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749]">Centrum Pomocy</h1>
+</div>
+<div class="text-[#003749] font-extrabold tracking-tighter">dlaczegozyc.pl</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] h-[1px] w-full"></div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Crisis Highlight Section -->
+<section class="mb-10">
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-xl shadow-[0_12px_32px_rgba(0,55,73,0.06)] text-on-primary">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+<h2 class="text-xl font-headline font-bold">Potrzebujesz pilnej pomocy?</h2>
+</div>
+<p class="text-on-primary/90 mb-6 leading-relaxed font-body">Jeśli Ty lub ktoś bliski znajduje się w bezpośrednim niebezpieczeństwie, zadzwoń pod numer alarmowy.</p>
+<div class="space-y-3">
+<a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors" href="tel:112">
+<span>Numer alarmowy: 112</span>
+<span class="material-symbols-outlined">call</span>
+</a>
+<a class="flex items-center justify-between bg-surface-container-lowest text-on-surface p-4 rounded-lg font-bold text-lg hover:bg-surface-bright transition-colors" href="tel:116123">
+<span>Kryzysowy: 116 123</span>
+<span class="material-symbols-outlined">support_agent</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Help Categories List -->
+<section class="space-y-6">
+<h3 class="text-sm font-label font-semibold text-outline tracking-widest uppercase">KATEGORIE POMOCY</h3>
+<!-- Category: Telefony Zaufania -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/20">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-surface-container p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined">phone_in_talk</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Telefony zaufania</h4>
+<p class="text-sm text-on-surface-variant font-body">Bezpłatne i anonimowe wsparcie telefoniczne.</p>
+</div>
+</div>
+<ul class="space-y-4">
+<li class="pl-4 border-l-2 border-primary-container">
+<p class="font-bold text-sm">Dla dzieci i młodzieży</p>
+<p class="text-sm text-outline mb-1">Czynny całą dobę, 7 dni w tygodniu.</p>
+<a class="text-primary font-bold inline-flex items-center gap-1" href="tel:116111">116 111 <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+</li>
+<li class="pl-4 border-l-2 border-primary-container">
+<p class="font-bold text-sm">Dla osób dorosłych</p>
+<p class="text-sm text-outline mb-1">Bezpłatny telefon wsparcia psychicznego.</p>
+<a class="text-primary font-bold inline-flex items-center gap-1" href="tel:116123">116 123 <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+</li>
+</ul>
+</div>
+<!-- Category: Lokalne Ośrodki -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/20">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-tertiary-container p-3 rounded-lg text-tertiary">
+<span class="material-symbols-outlined">distance</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Lokalne ośrodki</h4>
+<p class="text-sm text-on-surface-variant font-body">Znajdź pomoc stacjonarną w Twojej okolicy.</p>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm text-on-surface leading-relaxed">Centra Interwencji Kryzysowej (CIK) oferują bezpłatną pomoc psychologiczną, prawną i socjalną.</p>
+<button class="w-full flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container p-3 rounded-lg font-semibold hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm">map</span>
+                        Znajdź najbliższy ośrodek
+                    </button>
+</div>
+</div>
+<!-- Category: Materiały Edukacyjne -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/20">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Materiały edukacyjne</h4>
+<p class="text-sm text-on-surface-variant font-body">Baza wiedzy o zdrowiu psychicznym.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-2">article</span>
+<p class="text-xs font-bold leading-tight">Jak rozpoznać depresję?</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-2">auto_stories</span>
+<p class="text-xs font-bold leading-tight">Pierwsza pomoc emocjonalna</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Informational Footer -->
+<footer class="mt-12 mb-8 text-center px-4">
+<p class="text-xs text-outline leading-relaxed font-body">
+                Wszystkie podane numery telefonów są bezpłatne na terenie Polski. <br/>
+                Twoje bezpieczeństwo jest dla nas najważniejsze.
+            </p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#86b9d2]/20 shadow-[0_-12px_32px_rgba(0,55,73,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4e8198] dark:text-slate-400 px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</a>
+</nav>
+</body></html>

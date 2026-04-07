@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d9e6da",
+              "secondary-fixed": "#d6e5ef",
+              "on-background": "#003749",
+              "primary-fixed": "#a3f69c",
+              "inverse-primary": "#9df197",
+              "tertiary-fixed": "#e7f4e8",
+              "outline": "#4e8198",
+              "on-secondary-fixed-variant": "#4f5d67",
+              "inverse-surface": "#011017",
+              "primary-fixed-dim": "#95e88f",
+              "error-dim": "#5c1202",
+              "surface-tint": "#1b6d24",
+              "on-tertiary-container": "#515d54",
+              "on-error": "#fff7f6",
+              "on-surface": "#003749",
+              "primary-container": "#a3f69c",
+              "on-tertiary-fixed": "#3f4b42",
+              "surface-container": "#d9f2ff",
+              "on-primary-container": "#065f18",
+              "surface-container-highest": "#bde9ff",
+              "background": "#f4faff",
+              "surface-container-low": "#e7f6ff",
+              "tertiary-container": "#e7f4e8",
+              "secondary-dim": "#47555e",
+              "surface": "#f4faff",
+              "tertiary-dim": "#4a564d",
+              "on-tertiary-fixed-variant": "#5b675e",
+              "secondary": "#53616a",
+              "surface-bright": "#f4faff",
+              "tertiary": "#566259",
+              "surface-dim": "#a7e2ff",
+              "on-error-container": "#742410",
+              "inverse-on-surface": "#8f9fa9",
+              "primary-dim": "#076019",
+              "on-secondary": "#f4faff",
+              "on-secondary-fixed": "#33414a",
+              "on-tertiary": "#effcf0",
+              "error-container": "#fe8b70",
+              "on-secondary-container": "#46545d",
+              "surface-variant": "#bde9ff",
+              "on-primary-fixed-variant": "#176a21",
+              "secondary-fixed-dim": "#c8d6e1",
+              "on-primary-fixed": "#004b0f",
+              "on-primary": "#e5ffdd",
+              "secondary-container": "#d6e5ef",
+              "outline-variant": "#86b9d2",
+              "primary": "#1b6d24",
+              "error": "#9e422c",
+              "on-surface-variant": "#30657b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#cbedff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "2xl": "1.5rem", "3xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; background-color: #f4faff; color: #003749; -webkit-font-smoothing: antialiased; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; }
+      .writing-area:focus { outline: none; border: 2px solid #1b6d24; }
+      .signature-gradient { background: linear-gradient(135deg, #1b6d24 0%, #a3f69c 100%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#f4faff] dark:bg-slate-900/90 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 text-[#1b6d24] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-[#003749]">dlaczegozyc.pl</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="account_circle">account_circle</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-[#e7f6ff] dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-lg mx-auto min-h-screen flex flex-col">
+<!-- Instructional Content -->
+<section class="mb-10">
+<h2 class="font-headline font-extrabold text-3xl text-on-surface leading-tight mb-4">
+                Podziel się tym, co czujesz
+            </h2>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">
+                To Twoja bezpieczna przestrzeń. Napisz cokolwiek masz na sercu. Nikt Cię nie ocenia.
+            </p>
+</section>
+<!-- Anonymity Banner -->
+<div class="bg-tertiary-container rounded-2xl p-5 mb-8 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<div>
+<p class="font-body font-semibold text-on-tertiary-fixed leading-tight">
+                    Twoja wiadomość jest całkowicie anonimowa.
+                </p>
+<p class="font-body text-sm text-on-tertiary-fixed-variant mt-1">
+                    Nie zbieramy żadnych danych identyfikacyjnych.
+                </p>
+</div>
+</div>
+<!-- Writing Space -->
+<div class="flex-grow flex flex-col gap-4">
+<div class="relative flex-grow bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden group">
+<textarea class="writing-area w-full h-[350px] md:h-full p-6 font-body text-lg text-on-surface placeholder:text-outline-variant/60 bg-transparent border-none resize-none" placeholder="Zacznij pisać tutaj..." spellcheck="true"></textarea>
+<!-- Decorative indicator -->
+<div class="absolute bottom-4 right-4 text-outline-variant/40 flex items-center gap-1 pointer-events-none">
+<span class="material-symbols-outlined text-sm" data-icon="draw">draw</span>
+<span class="text-xs font-label">Tylko Ty to widzisz</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="signature-gradient w-full py-5 rounded-2xl shadow-[0_12px_32px_rgba(27,109,36,0.15)] active:scale-95 transition-transform duration-150 group">
+<span class="flex items-center justify-center gap-2 text-on-primary font-headline font-bold text-lg">
+                    Wyślij wiadomość
+                    <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1" data-icon="send">send</span>
+</span>
+</button>
+</div>
+<!-- Supporting visual hint -->
+<div class="mt-12 text-center opacity-40">
+<div class="w-12 h-1 bg-outline-variant/20 mx-auto rounded-full mb-4"></div>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">
+                Strefa Ciszy i Zrozumienia
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4faff]/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_32px_rgba(0,55,73,0.06)] border-t border-[#86b9d2]/20">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Home</span>
+</div>
+<!-- Inspiration -->
+<div class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Inspiration</span>
+</div>
+<!-- Box (Active) -->
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#1b6d24] to-[#a3f69c] text-white rounded-2xl px-4 py-2 scale-105 transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Box</span>
+</div>
+<!-- Help -->
+<div class="flex flex-col items-center justify-center text-[#4e8198] px-4 py-2 hover:text-[#1b6d24] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="lifeline">line_end</span>
+<span class="font-['Inter'] text-[11px] font-medium leading-relaxed">Help</span>
+</div>
+</nav>
+<!-- Ambient background element for Sanctuary aesthetic -->
+<div class="fixed top-0 right-0 -z-10 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-64 h-64 bg-tertiary-container/30 rounded-full blur-[80px] pointer-events-none"></div>
+</body></html>
